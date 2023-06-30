@@ -1,6 +1,6 @@
 from json_maker import script_make
 
-name = "Trouble Brewing"
+name = "Trouble Brewing Spanish"
 author = "Nolo"
 logo = ""
 

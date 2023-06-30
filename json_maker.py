@@ -42,9 +42,18 @@ def script_make(name,author,logo,roles):
                             continue
                 x = x + 1
 
-            roles_dic['id'] = amy + '_es'
-            roles_dic['image'] = "https://raw.githubusercontent.com/bra1n/townsquare/main/src/assets/icons/" + amy + ".png"
+            with open('images.csv') as file:
+                    csv_reader2 = csv.reader(file)
+                    for row in csv_reader2:
+                        try:
+                            if row[1] == amy:
 
+                                roles_dic['image'] = row[2]
+                        except:
+                            continue
+
+            roles_dic['id'] = amy + '_es'
+            
             script.append(roles_dic)
 
 
