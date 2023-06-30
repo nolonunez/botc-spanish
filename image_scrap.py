@@ -5,68 +5,49 @@ import pandas as pd
 
 dfl = []
 
-def png(edition):
+def png(category):
 
 	data = []
 	df = pd.DataFrame(data, columns=["role", "image"])
 	df.to_csv("images.csv")
 
-	url = edition
+	url = category
 	response = requests.get(url)
 	response = response.content
 
 	soup = BeautifulSoup(response, "html.parser")
-	roles = soup.find_all("div", {"class": "small-6 medium-6 large-2 columns"})
+	chunk = soup.find("div", {"id": "mw-pages"})
 
-	while True:
-		try:
-			for role in roles:
+	roles = chunk.find_all("a")
 
-				png = role.find("img", {"class": "thumbimage"})
-				role_id = png["alt"]
+	for role in roles:
 
-				png = "https://wiki.bloodontheclocktower.com/" + png["src"]
-				role_id = role_id.replace("Icon ","").replace(" ","").replace(".png","")
+		print("Looking for the " + role["title"])
+		
+		role_url = "https://wiki.bloodontheclocktower.com" + role["href"]
 
-				data.append([role_id,png])
-			break
-		except AttributeError:
-			continue
+		response = requests.get(role_url)
+		response = response.content
+
+		soup = BeautifulSoup(response, "html.parser")
+
+		details = soup.find("div",{"id": "character-details"})
+		png = details.find("img")
+
+		role_id = png["alt"]
+		role_id = role_id.replace("Icon ","").replace(" ","").replace(".png","")
+
+		png = "https://wiki.bloodontheclocktower.com/" + png["src"]
+		
+		data.append([role_id,png])
 
 	dff = pd.DataFrame(data, columns=["role", "image"])
 	dfl.append(dff)
 	df = pd.concat(dfl).to_csv("images.csv")
 
-	data = []
-	df = pd.DataFrame(data, columns=["role", "image"])
-	df.to_csv("images.csv")
+	print("Images Ready")
 
-	url = edition
-	response = requests.get(url)
-	response = response.content
-
-	soup = BeautifulSoup(response, "html.parser")
-	roles = soup.find_all("div", {"class": "small-6 medium-6 large-2 end columns"})
-
-	while True:
-		try:
-			for role in roles:
-
-				png = role.find("img", {"class": "thumbimage"})
-				role_id = png["alt"]
-
-				png = "https://wiki.bloodontheclocktower.com/" + png["src"]
-				role_id = role_id.replace("Icon ","").replace(" ","").replace(".png","")
-
-				data.append([role_id,png])
-			break
-		except AttributeError:
-			continue
-
-	dff = pd.DataFrame(data, columns=["role", "image"])
-	dfl.append(dff)
-	df = pd.concat(dfl).to_csv("images.csv")
-
-
-png("https://wiki.bloodontheclocktower.com/Trouble_Brewing")
-png("https://wiki.bloodontheclocktower.com/Sects_%26_Violets")
+png("https://wiki.bloodontheclocktower.com/Category:Townsfolk")
+png("https://wiki.bloodontheclocktower.com/Category:Outsiders")
+png("https://wiki.bloodontheclocktower.com/Category:Minions")
+png("https://wiki.bloodontheclocktower.com/Category:Demons")
