@@ -39,5 +39,17 @@ amy = [
 "scarletwoman", #Mujer Escarlata
 
 #DEMONS
-"imp" #Imp
+"imp", #Imp
+
+#TRAVELERS
+#You start knowing
+#Each night
+"bureaucrat", #Burócrata
+"thief", #Ladrón
+"gunslinger", #Pistolero
+#Once per game
+#Everything else
+"scapegoat", #Chivo Expiatorio
+"beggar", #Limosnero
+
 ]

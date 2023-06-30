@@ -6,7 +6,6 @@ def script_make(name,author,logo,roles):
     credentials = {
     "id":"_meta",
     "name":name,
-    "author":author,
     }  
 
     #list for exporting json in amy order
@@ -15,6 +14,9 @@ def script_make(name,author,logo,roles):
 
     if logo != "":
         credentials["logo"] = logo
+
+    if name != "":
+        credentials["name"] = name
 
     script = [credentials]
 
@@ -37,7 +39,12 @@ def script_make(name,author,logo,roles):
                                 obj_name = obj_list[x]
                                 
                                 if row[x] != '':
-                                    roles_dic[obj_name] = row[x]
+                                    
+                                    if x == 8 or x == 9:
+                                        rem = row[x].split(",")
+                                        roles_dic[obj_name] = rem
+                                    else:
+                                        roles_dic[obj_name] = row[x]
                         except:
                             continue
                 x = x + 1
@@ -60,3 +67,5 @@ def script_make(name,author,logo,roles):
     save_file = open(name.replace(" ","_") + ".json", "w")  
     json.dump(script, save_file)  
     save_file.close() 
+
+    print( name + " está listo.")
