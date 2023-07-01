@@ -81,7 +81,6 @@ amy = [
 #Once per game
 #Everything else
 "sweetheart", #Amor de Persona
-"barber", #Barbero
 "drunk", #Borracho
 "damsel", #Damisela
 "golem", #Gólem
@@ -91,6 +90,7 @@ amy = [
 "goon", #Matón
 "mutant", #Mutant
 "lunatic", #Lunático
+"barber", #Peluquero
 "politician", #Político
 "recluse", #Reclusa
 "saint", #Santo

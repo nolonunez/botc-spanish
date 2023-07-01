@@ -36,6 +36,40 @@ roles = [
 "scapegoat"
 ]
 
+#SECTS & VIOLETS
+
+name = "De Lirios y Sectas"
+author = ""
+logo = ""
+
+roles = [
+"clockmaker",
+"dreamer",
+"snakecharmer",
+"mathematician",
+"flowergirl",
+"towncrier",
+"oracle",
+"savant",
+"seamstress",
+"philosopher",
+"artist",
+"juggler",
+"sage",
+"mutant",
+"sweetheart",
+"barber",
+"klutz",
+"eviltwin",
+"witch",
+"cerenovus",
+"pithag",
+"fanggu",
+"vigormortis",
+"nodashii",
+"vortox"
+]
+
 #BAD MOON RISING
 
 name = "Luna de Sangre"
