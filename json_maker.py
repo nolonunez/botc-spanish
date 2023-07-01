@@ -16,7 +16,7 @@ def script_make(name,author,logo,roles):
         credentials["logo"] = logo
 
     if name != "":
-        credentials["name"] = name
+        credentials["author"] = author
 
     script = [credentials]
 

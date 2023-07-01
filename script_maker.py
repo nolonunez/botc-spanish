@@ -1,37 +1,40 @@
 from json_maker import script_make
 
-name = "Trouble Brewing"
+name = "Luna de Sangre"
 author = ""
-logo = "https://www.bloodstar.xyz/p/nolo/Trouble_Brewing_ES_FULL/_meta.png"
+logo = ""
 
 roles = [
-"chef",
-"washerwoman",
-"investigator",
-"librarian",
-"empath",
-"fortuneteller",
-"undertaker",
-"monk",
-"slayer",
-"soldier",
-"ravenkeeper",
-"virgin",
-"mayor",
-"butler",
-"drunk",
-"recluse",
-"drunk",
-"poisoner",
-"spy",
-"baron",
-"scarletwoman",
-"imp",
-"beggar",
-"thief",
-"bureaucrat",
-"gunslinger",
-"scapegoat"
+"grandmother",
+"sailor",
+"chambermaid",
+"exorcist",
+"innkeeper",
+"gambler",
+"gossip",
+"courtier",
+"professor",
+"minstrel",
+"tealady",
+"pacifist",
+"fool",
+"goon",
+"lunatic",
+"tinker",
+"moonchild",
+"godfather",
+"devilsadvocate",
+"assassin",
+"mastermind",
+"zombuul",
+"pukka",
+"shabaloth",
+"po",
+"apprentice",
+"matron",
+"voudon",
+"judge",
+"bishop"
 ]
 
 script_make(name,author,logo,roles)

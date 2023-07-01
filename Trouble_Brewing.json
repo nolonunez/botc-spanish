@@ -2,7 +2,8 @@
     {
         "id": "_meta",
         "name": "Trouble Brewing",
-        "logo": "https://www.bloodstar.xyz/p/nolo/Trouble_Brewing_ES_FULL/_meta.png"
+        "logo": "https://www.bloodstar.xyz/p/nolo/Trouble_Brewing_ES_FULL/_meta.png",
+        "author": ""
     },
     {
         "id": "librarian_es",
@@ -73,6 +74,21 @@
         "image": "https://wiki.bloodontheclocktower.com//images/1/13/Icon_empath.png"
     },
     {
+        "id": "fortuneteller_es",
+        "name": "Vidente",
+        "ability": "Cada noche, escoge a 2 jugadores: aprendes si alguno de ellos es el Demonio. Hay un jugador del equipo bueno que se registra como Demonio para ti.",
+        "edition": "tb",
+        "firstNight": "37",
+        "firstNightReminder": "La Vidente se\u00f1ala a dos jugadores. Da la se\u00f1al con la cabeza (s\u00ed o no) si alguno de esos jugadores es el Demonio.",
+        "otherNight": "54",
+        "otherNightReminder": "La Vidente se\u00f1ala a dos jugadores. Da la se\u00f1al con la cabeza (s\u00ed o no) si alguno de esos jugadores es el Demonio.",
+        "reminders": [
+            "Falso Demonio"
+        ],
+        "team": "townsfolk",
+        "image": "https://wiki.bloodontheclocktower.com//images/c/c3/Icon_fortune_teller.png"
+    },
+    {
         "id": "monk_es",
         "name": "Monje",
         "ability": "Cada noche*, escoge a un jugador (no t\u00fa mismo): est\u00e1 a salvo del Demonio esta noche.",
@@ -99,21 +115,6 @@
         ],
         "team": "townsfolk",
         "image": "https://wiki.bloodontheclocktower.com//images/0/05/Icon_undertaker.png"
-    },
-    {
-        "id": "fortuneteller_es",
-        "name": "Vidente",
-        "ability": "Cada noche, escoge a 2 jugadores: aprendes si alguno de ellos es el Demonio. Hay un jugador del equipo bueno que se registra como Demonio para ti.",
-        "edition": "tb",
-        "firstNight": "37",
-        "firstNightReminder": "La Vidente se\u00f1ala a dos jugadores. Da la se\u00f1al con la cabeza (s\u00ed o no) si alguno de esos jugadores es el Demonio.",
-        "otherNight": "54",
-        "otherNightReminder": "La Vidente se\u00f1ala a dos jugadores. Da la se\u00f1al con la cabeza (s\u00ed o no) si alguno de esos jugadores es el Demonio.",
-        "reminders": [
-            "Falso Demonio"
-        ],
-        "team": "townsfolk",
-        "image": "https://wiki.bloodontheclocktower.com//images/c/c3/Icon_fortune_teller.png"
     },
     {
         "id": "slayer_es",
