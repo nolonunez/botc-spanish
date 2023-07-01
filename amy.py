@@ -123,8 +123,8 @@ amy = [
 "mastermind", #Maquiavélico
 "marionette", #Marioneta
 "scarletwoman", #Mujer Escarlata
-"boomdandy", #Señor Bombas
 "organgrinder", #Organillero
+"boomdandy", #Señor Bombas
 "vizier", #Visir
 
 #DEMONS
