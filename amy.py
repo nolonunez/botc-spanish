@@ -19,7 +19,7 @@ amy = [
 "chambermaid", #Camarera
 "cultleader", #Cultista
 "empath", #Émpata
-"snakecharmer", #Encanta-Serpientes
+"snakecharmer", #Hipnotizador
 "general", #General
 "sailor", #Marinero
 "mathematician", #Matemático
@@ -48,21 +48,21 @@ amy = [
 "slayer", #Cazador
 "courtier", #Cortesano
 "seamstress", #Costurera
-"poppygrower", #Jardinera
 "philosopher", #Filósofo
 "huntsman", #Guardabosques
 "engineer", #Ingeniero
 "fisherman", #Pescador
 "professor", #Profesor
-"nightwatchman", #Vigilante Nocturno
+"nightwatchman", #Velador
 #Everything else
 "mayor", #Alcalde
 "alchemist", #Alquimista
 "fool", #Bufón
 "choirboy", #Corista
 "ravenkeeper", #Cuida-cuervos
+"poppygrower", #Floricultora
 "farmer", #Granjero
-"magician", #Mago
+"magician", #Ilusionista
 "juggler", #Malavarista
 "pacifist", #Pacifista
 "sage", #Sabio
@@ -84,7 +84,7 @@ amy = [
 "drunk", #Borracho
 "damsel", #Damisela
 "golem", #Gólem
-"heretic", #Herético
+"heretic", #Hereje
 "moonchild", #Hijo de la Luna
 "puzzlemaster", #Maestro del Acertijo
 "goon", #Matón
@@ -131,7 +131,7 @@ amy = [
 #You start...
 "lleech", #Sanguijuela 
 #Each night
-"lilmonsta", #Mounstrín
+"lilmonsta", #Pequeño Demonio
 "pukka", #Pukka
 #Each night*
 "alhadikhia", #Al-Hadikia
@@ -193,5 +193,6 @@ amy = [
 "stormcatcher",
 "bootlegger",
 "gardener"
+#"deusexfiasco"
 
 ]
