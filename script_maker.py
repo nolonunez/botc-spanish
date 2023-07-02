@@ -1,40 +1,39 @@
 from json_maker import script_make
 
-name = "De Lirios y Sectas"
-author = ""
+name = "El Proyecto Chaneque"
+author = "Nolo"
 logo = ""
 
 roles = [
 "clockmaker",
-"dreamer",
-"snakecharmer",
-"mathematician",
-"flowergirl",
-"towncrier",
-"oracle",
-"savant",
-"seamstress",
-"philosopher",
+"grandmother",
+"pixie",
 "artist",
-"juggler",
+"nightwatchman",
+"seamstress",
+"dreamer",
+"gambler",
+"snakecharmer",
+"cannibal",
+"savant",
+"farmer",
 "sage",
-"mutant",
-"sweetheart",
+"goon",
 "barber",
-"klutz",
-"eviltwin",
-"witch",
-"cerenovus",
+"snitch",
+"drunk",
+"snitch",
 "pithag",
+"poisoner",
+"spy",
+"goblin",
 "fanggu",
-"vigormortis",
-"nodashii",
-"vortox",
-"barista",
-"bonecollector",
-"butcher",
+"imp",
+"lilmonsta",
+"scapegoat",
 "deviant",
-"harlot"
+"gangster",
+"voudon"
 ]
 
 script_make(name,author,logo,roles)
