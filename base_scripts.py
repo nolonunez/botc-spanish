@@ -19,6 +19,7 @@ roles = [
 "soldier",
 "ravenkeeper",
 "virgin",
+"saint",
 "mayor",
 "butler",
 "drunk",

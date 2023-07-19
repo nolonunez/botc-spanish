@@ -1,39 +1,21 @@
 from json_maker import script_make
 
-name = "El Proyecto Chaneque"
-author = "Nolo"
+name = "Sin Mucha Gracia"
+author = "Steven Medway"
 logo = ""
 
 roles = [
+"investigator",
+"chambermaid",
 "clockmaker",
-"grandmother",
-"pixie",
 "artist",
-"nightwatchman",
-"seamstress",
-"dreamer",
-"gambler",
-"snakecharmer",
-"cannibal",
-"savant",
-"farmer",
+"empath",
 "sage",
-"goon",
-"barber",
-"snitch",
+"klutz",
 "drunk",
-"snitch",
-"pithag",
-"poisoner",
-"spy",
-"goblin",
-"fanggu",
-"imp",
-"lilmonsta",
-"scapegoat",
-"deviant",
-"gangster",
-"voudon"
+"scarletwoman",
+"baron",
+"imp"
 ]
 
 script_make(name,author,logo,roles)
