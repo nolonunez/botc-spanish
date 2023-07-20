@@ -6,7 +6,7 @@ name = "Destilando Problemas"
 author = ""
 logo = "https://www.bloodstar.xyz/p/nolo/Trouble_Brewing_ES_FULL/_meta.png"
 
-roles = [
+tb = [
 "chef",
 "washerwoman",
 "investigator",
@@ -43,7 +43,7 @@ name = "De Lirios y Sectas"
 author = ""
 logo = ""
 
-roles = [
+snv = [
 "clockmaker",
 "dreamer",
 "snakecharmer",
@@ -77,7 +77,7 @@ name = "Luna de Sangre"
 author = ""
 logo = ""
 
-roles = [
+bmr = [
 "grandmother",
 "sailor",
 "chambermaid",
