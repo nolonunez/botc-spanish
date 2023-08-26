@@ -2,16 +2,16 @@ amy = [
 #TOWNSFOLK
 
 #You start knowing
+"washerwoman", #Lavandera
+"librarian", #Bibliotecario
+"investigator", #Detective
 "grandmother", #Abuelita
 "balloonist", #Aeronauta
 "steward", #Ayudante
-"librarian", #Bibliotecario
 "knight", #Caballero
 "bountyhunter", #Cazarrecompensas
 "chef", #Chef
-"investigator", #Detective
 "pixie", #Hada
-"washerwoman", #Lavandera
 "noble", #Noble
 "clockmaker", #Relojero
 #Each night
@@ -88,6 +88,7 @@ amy = [
 "moonchild", #Hijo de la Luna
 "puzzlemaster", #Maestro del Acertijo
 "goon", #Matón
+"plaguedoctor", #Médico
 "mutant", #Mutant
 "lunatic", #Lunático
 "barber", #Peluquero
@@ -105,6 +106,7 @@ amy = [
 "widow", #Viuda
 #Each night
 "devilsadvocate", #Abogado Corrupto
+"harpy", #Arpía
 "witch", #Bruja
 "cerenovus", #Cerenovus
 "poisoner", #Envenenador

@@ -149,3 +149,5 @@ stormcatcher,Cazador de Tormentas,"Nombra a un personaje del equipo bueno. Si es
 bootlegger,Pirata,El Script tiene personajes o reglas no oficiales.,,,,,,,,,fabled
 gardener,Jardinero,El Narrador asigna a 1 o más personajes manualmente.,,,,,,,,,fabled
 deusexfiasco,Deus ex Fiasco,"Una vez por juego, el Narrador va a cometer un 'error', corregirlo y públicamente admitirlo.",,,,,,Ups,,,fabled
+harpy,Arpía,"Cada noche, escoge a 2 jugadores: mañana, el 1er jugador está 'loco' de que el 2do es malo, o puede que ambos mueran.",,5,,5,,"Loco, 'Malo'",,,minion
+plaguedoctor,Médico,"Si mueres, el Narrador obtiene una habilidad de un Minion no en juego.",,0,,1,"Cuando el Médico muera, coloca un token de Minion no en juego en el centro del lado izquierdo del Grimoire. Márcalo con el token de recordatorio de ""Habilidad de Narrador"" del Médico. De ser necesario, coloca un token de noche en la hoja del orden de noche. Cuando el minion acturaría, las decisiones relevantes son hechas por el Narrador.",Habilidad de Narrador,,,outsider
