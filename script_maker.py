@@ -1,39 +1,41 @@
 from json_maker import script_make
 from base_scripts import tb,snv,bmr
 
-name = "Destilando Problemas"
-author = ""
-logo = "https://www.bloodstar.xyz/p/nolo/Trouble_Brewing_ES_FULL/_meta.png"
+name = "Sin Miedo a Morir"
+author = "Nolo"
+logo = ""
 
 roles = [
-"chef",
-"washerwoman",
-"investigator",
-"librarian",
-"empath",
-"fortuneteller",
-"undertaker",
-"monk",
-"slayer",
-"soldier",
-"ravenkeeper",
+"knight",
+"grandmother",
+"pixie",
+"gossip",
+"oracle",
+"innkeeper",
+"gambler",
+"nightwatchman",
+"artist",
+"philosopher",
+"sage",
 "virgin",
-"saint",
-"mayor",
-"butler",
-"drunk",
+"cannibal",
+"goon",
+"tinker",
 "recluse",
 "drunk",
-"poisoner",
+"godfather",
+"harpy",
 "spy",
-"baron",
-"scarletwoman",
-"imp",
-"beggar",
-"thief",
-"bureaucrat",
+"cerenovus",
+"shabaloth",
+"po",
+"vortox",
+"legion",
 "gunslinger",
-"scapegoat"
+"voudon",
+"gangster",
+"butcher",
+"doomsayer"
 ]
 
 script_make(name,author,logo,roles)

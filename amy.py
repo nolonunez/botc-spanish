@@ -35,7 +35,7 @@ amy = [
 "flowergirl", #Niña de las Flores
 "oracle", #Oráculo
 "undertaker", #Sepulturero
-"inkeeper", #Tabernero
+"innkeeper", #Tabernero
 "towncrier", #Voceador
 #Each day
 "amnesiac", #Amnésico 
