@@ -1,41 +1,10 @@
 from json_maker import script_make
 from base_scripts import tb,snv,bmr
 
-name = "Sin Miedo a Morir"
-author = "Nolo"
+name = "Luna de Sangre"
+author = ""
 logo = ""
 
-roles = [
-"knight",
-"grandmother",
-"pixie",
-"gossip",
-"oracle",
-"innkeeper",
-"gambler",
-"nightwatchman",
-"artist",
-"philosopher",
-"sage",
-"virgin",
-"cannibal",
-"goon",
-"tinker",
-"recluse",
-"drunk",
-"godfather",
-"harpy",
-"spy",
-"cerenovus",
-"shabaloth",
-"po",
-"vortox",
-"legion",
-"gunslinger",
-"voudon",
-"gangster",
-"butcher",
-"doomsayer"
-]
+roles = bmr
 
 script_make(name,author,logo,roles)
