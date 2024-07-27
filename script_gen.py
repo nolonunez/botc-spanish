@@ -1,9 +1,10 @@
-from json_maker import script_make
+from json_app import script
 from base_scripts import tb,snv,bmr
 
 name = "Muerte Incierta"
 author = ""
 logo = ""
+background = ""
 
 roles = [
     "clockmaker",
@@ -31,4 +32,4 @@ roles = [
     "pukka"
 ]
 
-script_make(name,author,logo,roles)
+script(name,author,logo,background,roles)
