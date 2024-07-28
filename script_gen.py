@@ -1,7 +1,7 @@
-from json_app import script
-from base_scripts import tb,snv,bmr
+from assets.json_app import script
+from assets.base_scripts import tb,snv,bmr
 
-name = "Muerte Incierta"
+name = "test"
 author = ""
 logo = ""
 background = ""

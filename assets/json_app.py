@@ -9,8 +9,8 @@ def script(name,author,logo,background,roles):
     }  
 
     #list for exporting json in amy order
-    import amy
-    amys = amy.amy
+    import assets.amy
+    amys = assets.amy.amy
 
     if logo != "":
         credentials["logo"] = logo
@@ -34,7 +34,7 @@ def script(name,author,logo,background,roles):
 
             x = 0
             while x < 12:
-                with open('es_MX.csv') as file:
+                with open('./assets/es_MX.csv') as file:
                     csv_reader = csv.reader(file)
 
                     for row in csv_reader:
@@ -75,8 +75,8 @@ def script(name,author,logo,background,roles):
                             continue
                 x = x + 1
 
-            #this doesn't include the alignment changed images, as i can't find them in the internet
-            with open('images.csv') as file:
+            #this doesn't include the alignment changed images, as I can't find them in the internet
+            with open('./assets/images.csv') as file:
                     csv_reader2 = csv.reader(file)
                     for row in csv_reader2:
                         try:
@@ -93,9 +93,5 @@ def script(name,author,logo,background,roles):
     with open("./botc_scripts/" + name.replace(" ","_") + ".json", "w+") as f:
         json.dump(script, f)  
     f.close()
-
-    #save_file = open(name.replace(" ","_") + ".json", "w")  
-    #json.dump(script, save_file)  
-    #save_file.close() 
 
     print( name + " está listo.")
