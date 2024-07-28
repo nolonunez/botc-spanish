@@ -1,5 +1,3 @@
-#COPY AND PASTE TO 'script_maker.py'
-
 #TROUBLE BREWING
 
 name = "Destilando Problemas"

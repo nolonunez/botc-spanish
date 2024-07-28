@@ -1,35 +1,11 @@
 from assets.json_app import script
 from assets.base_scripts import tb,snv,bmr
 
-name = "test"
+name = "De Lirios y Sectas"
 author = ""
 logo = ""
 background = ""
 
-roles = [
-    "clockmaker",
-    "grandmother",
-    "librarian",
-    "empath",
-    "fortuneteller",
-    "exorcist",
-    "flowergirl",
-    "oracle",
-    "undertaker",
-    "monk",
-    "artist",
-    "slayer",
-    "seamstress",
-    "lunatic",
-    "mutant",
-    "sweetheart",
-    "recluse",
-    "godfather",
-    "assassin",
-    "scarletwoman",
-    "marionette",
-    "nodashii",
-    "pukka"
-]
+roles = snv
 
 script(name,author,logo,background,roles)

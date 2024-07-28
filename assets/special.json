@@ -1,0 +1,45 @@
+{
+    "drunk" : [
+        {
+            "name": "bag-disabled",
+            "type": "selection"
+        },
+        {
+            "name": "replace-character",
+            "type": "reveal"
+        }
+    ],
+    "spy" : [
+        {
+            "name": "grimoire",
+            "type": "signal"
+        }
+    ],
+    "philosopher" : [
+        {
+            "name": "replace-character",
+            "type": "reveal"
+        }
+    ],
+    "bureaucrat" : [
+        {
+            "name": "multiplier",
+            "type": "vote",
+            "value": 3
+        }
+    ],
+    "thief" : [
+        {
+            "name": "multiplier",
+            "type": "vote",
+            "value": -1
+        }
+    ],
+    "voudon" : [
+        {
+            "name": "ghost-votes",
+            "type": "ability"
+        }
+    ]
+}
+ 

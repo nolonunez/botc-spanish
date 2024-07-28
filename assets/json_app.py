@@ -18,8 +18,20 @@ def script(name,author,logo,background,roles):
     if author != "":
         credentials["author"] = author
     
+    
+    from assets.base_scripts import tb,snv,bmr
+    
     if background != "":
         credentials["background"] = background
+    elif roles == tb:
+        credentials["background"] = 'https://botc.app/assets/background5-B3ODOfpI.webp'
+    elif roles == bmr:
+        credentials["background"] = 'https://botc.app/assets/background5-BcRG2zhb.webp'
+    elif roles == snv:
+        credentials["background"] = 'https://botc.app/assets/background5-CWiuwbQc.webp'
+    
+    else:
+        credentials["background"] = 'https://botc.app/assets/background1-C0iW8pNy.webp'
 
     script = [credentials]
 
@@ -33,7 +45,7 @@ def script(name,author,logo,background,roles):
             obj_list = ["id","name","edition","team","firstNight","firstNightReminder","otherNight","otherNightReminder","reminders","remindersGlobal","ability","setup","special","jinxes"]
 
             x = 0
-            while x < 12:
+            while x < 13:
                 with open('./assets/es_MX.csv') as file:
                     csv_reader = csv.reader(file)
 
@@ -58,18 +70,30 @@ def script(name,author,logo,background,roles):
                                         roles_dic[obj_name] = rem
                                     else:
                                         continue
-
+                                
+                                #setup is a boolean
                                 elif x == 11:
                                     if row[x] != "":
                                         roles_dic["setup"] = True
                                     else:
                                         roles_dic["setup"] = False    
+                                  
+                                #special abilities
+                                elif x == 12:
+
+                                    char = row[0]
+                                                                                                          
+                                    fs = open('./assets/special.json')
+                                    special_data = json.load(fs)
+
+                                    for i in special_data:
+                                        if i == char:
+                                            roles_dic["special"] = special_data[char]
+
+                                    fs.close()
                                 
                                 else:
                                     roles_dic[obj_name] = row[x]
-                                
-                                if x == 12 or x == 13:
-                                    roles_dic[obj_name] = ""
                                 
                         except:
                             continue
@@ -90,7 +114,19 @@ def script(name,author,logo,background,roles):
             
             script.append(roles_dic)
 
-    with open("./botc_scripts/" + name.replace(" ","_") + ".json", "w+") as f:
+    #path to folder depending on the script
+    from assets.base_scripts import tb,snv,bmr
+    path = ""
+
+    if roles == tb or roles == snv or roles == bmr:
+        path = "base_three/"
+    
+    elif len(roles) > 12:
+        path = "custom/"
+    else:
+        path = "teensy/"
+
+    with open("./botc_scripts/" + path + name.replace(" ","_") + ".json", "w+") as f:
         json.dump(script, f)  
     f.close()
 
