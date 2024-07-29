@@ -13,6 +13,7 @@ amy = [
 "pixie", #Hada
 "noble", #Noble
 "clockmaker", #Relojero
+"shugenja", #Shugenja
 #Each night
 "balloonist", #Aeronauta 
 "chambermaid", #Camarera
@@ -21,6 +22,7 @@ amy = [
 "general", #General
 "highpriestess", #Gran Sacerdotisa
 "snakecharmer", #Hipnotizador
+"villageidiot", #Idiota del Pueblo
 "sailor", #Marinero
 "mathematician", #Matemático
 "preacher", #Pastor
@@ -38,6 +40,7 @@ amy = [
 "innkeeper", #Tabernero
 "towncrier", #Voceador
 #Each day
+"alsaahir", #Alsaahir
 "amnesiac", #Amnésico 
 "gossip", #Chismoso
 "savant", #Prodigio
@@ -57,6 +60,7 @@ amy = [
 #Everything else
 "mayor", #Alcalde
 "alchemist", #Alquimista
+"banshee", #Banshee
 "fool", #Bufón
 "choirboy", #Corista
 "ravenkeeper", #Cuida-cuervos
@@ -73,6 +77,7 @@ amy = [
 
 #OUTSIDERS
 #You start knowing
+"ogre", #Ogro
 #Each night
 "butler", #Mayordomo
 #Each night*
@@ -83,6 +88,7 @@ amy = [
 "sweetheart", #Amor de Persona
 "drunk", #Borracho
 "damsel", #Damisela
+"zealot", #Extremista
 "golem", #Gólem
 "heretic", #Hereje
 "moonchild", #Hijo de la Luna
@@ -96,11 +102,13 @@ amy = [
 "recluse", #Reclusa
 "saint", #Santo
 "snitch", #Soplón
+"hatter", #Sombrerero
 "klutz", #Torpe
 "tinker", #Trabajador
 
 #MINIONS
 #You start knowing
+"summoner", #Invocador
 "mezepheles", #Mezefeles
 "godfather", #Padrino
 "widow", #Viuda
@@ -131,7 +139,9 @@ amy = [
 
 #DEMONS
 #You start...
-"lleech", #Sanguijuela 
+"lleech", #Sanguijuela
+"kazali", #Kazali 
+"yaggababble", #Yaggababble
 #Each night
 "lilmonsta", #Pequeño Demonio
 "pukka", #Pukka
@@ -141,6 +151,7 @@ amy = [
 "imp", #Imp
 "legion", #Legión
 "nodashii", #No Dashii
+"ojo", #Oculus
 "po", #Po
 "shabaloth", #Shabaloth
 "vigormortis", #Vigormortis

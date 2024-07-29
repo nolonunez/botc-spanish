@@ -34,6 +34,14 @@ def script(name,author,logo,background,roles):
         credentials["background"] = 'https://botc.app/assets/background1-C0iW8pNy.webp'
 
     script = [credentials]
+    
+    #to count if every role was added
+    n = 0
+    n2 = len(roles)
+    t = 0
+    o = 0
+    m = 0
+    d= 0
 
     for amy in amys:
 
@@ -59,6 +67,17 @@ def script(name,author,logo,background,roles):
                                 if x == 2 and row[x] == "":
                                     roles_dic[obj_name] = "experimental"
                                 
+                                elif x == 3:
+                                    roles_dic[obj_name] = row[x]
+                                    if row[x] == "townsfolk":
+                                        t = t + 1
+                                    elif row[x] == "outsider":
+                                        o = o + 1
+                                    elif row[x] == "minion":
+                                        m = m + 1
+                                    elif row[x] == "demon":
+                                        d = d + 1 
+                                
                                 #firstNight and otherNight must be int in the official app
                                 elif x == 4 or x == 6:
                                     roles_dic[obj_name] = int(row[x])
@@ -76,7 +95,10 @@ def script(name,author,logo,background,roles):
                                     if row[x] != "":
                                         roles_dic["setup"] = True
                                     else:
-                                        roles_dic["setup"] = False    
+                                        roles_dic["setup"] = False
+
+                                    print(roles_dic["name"] + " listo.")
+                                    n = n + 1    
                                   
                                 #special abilities
                                 elif x == 12:
@@ -94,7 +116,6 @@ def script(name,author,logo,background,roles):
                                 
                                 else:
                                     roles_dic[obj_name] = row[x]
-                                
                         except:
                             continue
                 x = x + 1
@@ -130,4 +151,6 @@ def script(name,author,logo,background,roles):
         json.dump(script, f)  
     f.close()
 
+    print("\nSe agregaron " + str(n) + " de " + str(n2) + " roles en total.")
+    print("La distribución es " + str(t) + "/" + str(o) + "/" + str(m) + "/" + str(d) + ".")
     print( name + " está listo.")
