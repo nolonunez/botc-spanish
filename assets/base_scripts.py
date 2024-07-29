@@ -66,7 +66,12 @@ snv = [
 "fanggu",
 "vigormortis",
 "nodashii",
-"vortox"
+"vortox",
+"butcher",
+"bonecollector",
+"harlot",
+"barista",
+"deviant"
 ]
 
 #BAD MOON RISING

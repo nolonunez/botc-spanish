@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-from bs4 import BeautifulSoup as bso
 import requests
 import pandas as pd
 
@@ -82,7 +81,7 @@ def png2(category):
 
 	dff = pd.DataFrame(data, columns=["role", "image"])
 	dfl.append(dff)
-	df = pd.concat(dfl).to_csv("images.csv")
+	df = pd.concat(dfl).to_csv("./assets/images.csv")
 
 	print("Images Ready")
 

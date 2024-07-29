@@ -6,7 +6,6 @@ amy = [
 "librarian", #Bibliotecario
 "investigator", #Detective
 "grandmother", #Abuelita
-"balloonist", #Aeronauta
 "steward", #Ayudante
 "knight", #Caballero
 "bountyhunter", #Cazarrecompensas
@@ -15,12 +14,13 @@ amy = [
 "noble", #Noble
 "clockmaker", #Relojero
 #Each night
-"highpriestess", #Gran Sacerdotisa 
+"balloonist", #Aeronauta 
 "chambermaid", #Camarera
 "cultleader", #Cultista
 "empath", #Émpata
-"snakecharmer", #Hipnotizador
 "general", #General
+"highpriestess", #Gran Sacerdotisa
+"snakecharmer", #Hipnotizador
 "sailor", #Marinero
 "mathematician", #Matemático
 "preacher", #Pastor

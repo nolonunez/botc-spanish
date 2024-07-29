@@ -38,7 +38,32 @@
     "voudon" : [
         {
             "name": "ghost-votes",
-            "type": "ability"
+            "type": "ability",
+            "time": "day"
+        }
+    ],
+    "widow" : [
+        {
+            "name": "grimoire",
+            "type": "signal"
+        }
+    ],
+    "villageidiot" : [
+        {
+            "name": "bag-duplicate",
+            "type": "selection"
+        }
+    ],
+    "lilmonsta" : [
+        {
+            "name": "bag-disabled",
+            "type": "selection"
+        }
+    ],
+    "marionette" : [
+        {
+            "name": "bag-disabled",
+            "type": "selection"
         }
     ]
 }
