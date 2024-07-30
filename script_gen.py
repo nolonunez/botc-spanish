@@ -7,31 +7,31 @@ logo = ""
 background = ""
 
 roles = [
-    "knight",
+    "grandmother",
+    "noble",
     "pixie",
-    "clockmaker",
+    "monk",
+    "balloonist",
     "dreamer",
     "empath",
     "gambler",
-    "nightwatchman",
     "philosopher",
-    "seamstress",
-    "artist",
+    "nightwatchman",
     "cannibal",
-    "amnesiac",
+    "banshee",
     "farmer",
-    "hatter",
-    "mutant",
+    "ogre",
     "drunk",
-    "recluse",
-    "tinker",
+    "mutant",
+    "sweetheart",
     "widow",
-    "cerenovus",
     "harpy",
-    "poisoner",
+    "assassin",
+    "summoner",
     "yaggababble",
-    "fanggu",
-    "imp"
+    "imp",
+    "po",
+    "vigormortis"
 ]
 
 script(name,author,logo,background,roles)
