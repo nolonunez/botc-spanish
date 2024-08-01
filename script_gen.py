@@ -1,11 +1,37 @@
 from assets.json_app import script
 from assets.base_scripts import tb,snv,bmr
 
-name = "De Lirios y Sectas"
-author = ""
+name = "El Proyecto Chaneque"
+author = "Nolo"
 logo = ""
 background = ""
 
-roles = snv
+roles = [
+    "noble",
+    "grandmother",
+    "pixie",
+    "empath",
+    "dreamer",
+    "balloonist",
+    "gambler",
+    "monk",
+    "nightwatchman",
+    "philosopher",
+    "farmer",
+    "cannibal",
+    "banshee",
+    "ogre",
+    "sweetheart",
+    "mutant",
+    "drunk",
+    "widow",
+    "harpy",
+    "summoner",
+    "assassin",
+    "yaggababble",
+    "imp",
+    "po",
+    "vigormortis"
+]
 
 script(name,author,logo,background,roles)
