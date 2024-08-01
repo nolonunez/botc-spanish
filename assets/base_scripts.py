@@ -22,7 +22,6 @@ tb = [
 "butler",
 "drunk",
 "recluse",
-"drunk",
 "poisoner",
 "spy",
 "baron",

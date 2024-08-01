@@ -1,7 +1,8 @@
 [
     {
         "id": "_meta",
-        "name": "Muerte Incierta"
+        "name": "Muerte Incierta (Uncertain Dead)",
+        "background": "https://botc.app/assets/background1-C0iW8pNy.webp"
     },
     {
         "id": "librarian_es",
@@ -76,7 +77,7 @@
         ],
         "ability": "Cada noche, escoge a 2 jugadores: aprendes si alguno de ellos es el Demonio. Hay un jugador del equipo bueno que se registra como Demonio para ti.",
         "setup": false,
-        "image": "https://wiki.bloodontheclocktower.com//images/c/c3/Icon_fortune_teller.png"
+        "image": "https://wiki.bloodontheclocktower.com//images/9/97/Icon_fortuneteller.png"
     },
     {
         "id": "exorcist_es",
@@ -312,6 +313,12 @@
         ],
         "ability": "Piensas que eres un personaje del equipo bueno, pero no lo eres. El Demonio sabe qui\u00e9n eres. [El Demonio est\u00e1 a tu lado]",
         "setup": true,
+        "special": [
+            {
+                "name": "bag-disabled",
+                "type": "selection"
+            }
+        ],
         "image": "https://wiki.bloodontheclocktower.com//images/c/cf/Icon_marionette.png"
     },
     {
@@ -328,7 +335,7 @@
         ],
         "ability": "Si hay 5 o m\u00e1s jugadores vivos y el Demonio muere, te conviertes en el Demonio. (Viajeros no cuentan)",
         "setup": false,
-        "image": "https://wiki.bloodontheclocktower.com//images/5/54/Icon_scarlet_woman.png"
+        "image": "https://wiki.bloodontheclocktower.com//images/1/13/Icon_scarletwoman.png"
     },
     {
         "id": "pukka_es",
