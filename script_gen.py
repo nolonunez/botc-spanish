@@ -1,37 +1,35 @@
 from assets.json_app import script
 from assets.base_scripts import tb,snv,bmr
 
-name = "El Proyecto Chaneque"
-author = "Nolo"
+name = "One Night Ultimate Carl"
+author = "Ken Cheng"
 logo = ""
 background = ""
 
 roles = [
-    "noble",
-    "grandmother",
-    "pixie",
+    "librarian",
+    "investigator",
+    "clockmaker",
+    "shugenja",
     "empath",
+    "chambermaid",
     "dreamer",
-    "balloonist",
-    "gambler",
-    "monk",
-    "nightwatchman",
+    "savant",
     "philosopher",
-    "farmer",
-    "cannibal",
-    "banshee",
-    "ogre",
-    "sweetheart",
+    "nightwatchman",
+    "artist",
+    "seamstress",
+    "slayer",
+    "recluse",
     "mutant",
-    "drunk",
-    "widow",
-    "harpy",
-    "summoner",
-    "assassin",
-    "yaggababble",
-    "imp",
-    "po",
-    "vigormortis"
+    "ogre",
+    "snitch",
+    "spy",
+    "cerenovus",
+    "marionette",
+    "baron",
+    "pukka",
+    "fiddler"
 ]
 
 script(name,author,logo,background,roles)

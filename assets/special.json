@@ -64,6 +64,22 @@
         {
             "name": "bag-disabled",
             "type": "selection"
+        },
+        {
+            "name": "replace-character",
+            "type": "reveal"
+        }
+    ],
+    "fiddler" : [
+        {
+            "name": "pointing",
+            "type": "ability"
+        }
+    ],
+    "carl" : [
+        {
+            "name": "pointing",
+            "type": "ability"
         }
     ]
 }
