@@ -33,10 +33,10 @@ def pdf_script(roles):
             with open('./assets/es_MX.csv') as file:
                 csv_reader = csv.reader(file)
 
+
                 for row in csv_reader:
                     try:
-                        if row[0] == n and row[3] == team:
-                                
+                        if row[0] == n and row[3] == team:    
                             pdf.set_font('helvetica', 'B', 8)
                             pdf.cell(24,10,row[1],1)
 
