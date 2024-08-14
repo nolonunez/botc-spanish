@@ -1,35 +1,15 @@
 from assets.json_app import script
+from assets.pdf_app import pdf_script
 from assets.base_scripts import tb,snv,bmr
 
-name = "One Night Ultimate Carl"
-author = "Ken Cheng"
+name = "Destilando Problemas"
+author = "Nolo (trad.)"
 logo = ""
 background = ""
+pdf = "Y"
 
-roles = [
-    "librarian",
-    "investigator",
-    "clockmaker",
-    "shugenja",
-    "empath",
-    "chambermaid",
-    "dreamer",
-    "savant",
-    "philosopher",
-    "nightwatchman",
-    "artist",
-    "seamstress",
-    "slayer",
-    "recluse",
-    "mutant",
-    "ogre",
-    "snitch",
-    "spy",
-    "cerenovus",
-    "marionette",
-    "baron",
-    "pukka",
-    "fiddler"
-]
+roles = tb
 
 script(name,author,logo,background,roles)
+if pdf == "Y":
+    pdf_script(roles)
