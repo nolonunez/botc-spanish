@@ -41,7 +41,7 @@ def script(name,author,logo,background,roles):
     t = 0
     o = 0
     m = 0
-    d= 0
+    d = 0
 
     for amy in amys:
 
