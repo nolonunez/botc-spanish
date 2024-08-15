@@ -81,6 +81,13 @@
             "name": "pointing",
             "type": "ability"
         }
+    ],
+    "banshee" : [
+        {
+            "name": "multiplier",
+            "type": "vote",
+            "value": 2
+        }
     ]
 }
  

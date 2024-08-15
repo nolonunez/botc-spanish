@@ -2,7 +2,7 @@ from fpdf import FPDF
 from fpdf.fonts import FontFace
 import csv
 
-def pdf_script(name,roles):
+def pdf_script(name,author,roles):
     
     print('\nGenerando archivo .pdf\n')
     import assets.amy
@@ -10,16 +10,19 @@ def pdf_script(name,roles):
 
     #pip install fpdf2
 
-    #layout ('P','L')
-    #unit ('mm','cm','in')
-    #format ('A3','A4','A5','Letter','Legal',(100,150))
-    #'B', 'U', 'I', '' (regular)
-    #w = width, h = height
-
     pdf = FPDF('P','mm','Letter')
-    pdf.set_margin(13)
+    pdf.set_left_margin(13)
+    pdf.set_top_margin(3)
+    pdf.set_auto_page_break(3)
+    pdf.set_right_margin(5)
     pdf.add_page()
-    pdf.set_font('helvetica', '', 7.5)
+    
+    pdf.set_font('helvetica', 'I', 10)
+    if author == '':
+        pdf.cell(0,5,name,0,1, align = 'C')
+    else:
+        pdf.cell(0,5,name + ' por ' + author,0,1, align = 'C')
+    pdf.set_font('helvetica', '', 8)
 
     roles_amyd = []
 
@@ -62,13 +65,13 @@ def pdf_script(name,roles):
     i = 0
     for m in teams_list:
         pdf.image('./assets/pdf_assets/'+ teams[i] +'.png',w=pdf.epw)
-        with pdf.table(borders_layout='NONE',line_height=3,col_widths=(5,8.5,60),text_align='LEFT',first_row_as_headings=False) as table:
+        with pdf.table(borders_layout='NONE',line_height=4,col_widths=(3.5,8.5,60),text_align='LEFT',first_row_as_headings=False) as table:
             for n in m:
                 row = table.row()
                 j = 0
                 for datum in n:
                     if j == 0:
-                        row.cell(img=datum, img_fill_width=True)
+                        row.cell(img=datum,img_fill_width=True)
                     elif j == 1:
                         row.cell(datum,style=FontFace(emphasis='BOLD'))
                     else:
@@ -80,7 +83,16 @@ def pdf_script(name,roles):
 
     total = len(townsfolk) + len(outsider) + len(minion) + len(demon)
 
-    pdf.output('./botc_scripts/' + name.replace(" ","_") + '.pdf')
+    from assets.base_scripts import tb,snv,bmr
+    if roles == tb or roles == snv or roles == bmr:
+        path = "base_three/"
+    
+    elif len(roles) > 12:
+        path = "custom/"
+    else:
+        path = "teensy/"
+
+    pdf.output('./botc_scripts/' + path + name.replace(" ","_") + '.pdf')
     print("\nSe agregaron " + str(total) + " de " + str(len(roles)) + " roles en total.")
     print("La distribución es " + str(len(townsfolk)) + "/" + str(len(outsider)) + "/" + str(len(minion)) + "/" + str(len(demon)) + ".")
     print(name + '.pdf está listo.')

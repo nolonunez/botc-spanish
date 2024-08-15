@@ -1,7 +1,8 @@
 import json
 import csv
+from assets.pdf_app import pdf_script
 
-def script(name,author,logo,background,roles):
+def script(name,author,logo,background,roles,pdf):
 
     print('Generando archivo .json\n')
 
@@ -156,3 +157,6 @@ def script(name,author,logo,background,roles):
     print("\nSe agregaron " + str(n) + " de " + str(n2) + " roles en total.")
     print("La distribución es " + str(t) + "/" + str(o) + "/" + str(m) + "/" + str(d) + ".")
     print( name + ".json está listo.")
+
+    if pdf == "Y":
+        pdf_script(name,author,roles)
