@@ -1,39 +1,44 @@
 from assets.json_app import script
 from assets.base_scripts import tb,snv,bmr
 
-name = "El Proyecto Chaneque"
+name = "Sin Miedo a Morir"
 author = "Nolo"
 logo = ""
 background = ""
 #'Y' or 'N'
-pdf = "Y"
+pdf = "N"
 
 roles = [
-    'noble',
     'grandmother',
+    'knight',
     'pixie',
-    'empath',
-    'dreamer',
-    'balloonist',
     'gambler',
-    'monk',
-    'nightwatchman',
-    'philosopher',
-    'farmer',
+    'oracle',
+    'innkeeper',
+    'gossip',
+    'artist',
     'cannibal',
-    'banshee',
-    'ogre',
-    'sweetheart',
-    'mutant',
+    'philosopher',
+    'nightwatchman',
+    'sage',
+    'virgin',
     'drunk',
-    'widow',
+    'goon',
+    'recluse',
+    'tinker',
+    'godfather',
     'harpy',
-    'summoner',
-    'assassin',
-    'yaggababble',
-    'imp',
+    'cerenovus',
+    'spy',
+    'legion',
     'po',
-    'vigormortis'
+    'shabaloth',
+    'vortox',
+    'butcher',
+    'gangster',
+    'gunslinger',
+    'voudon',
+    'doomsayer'
 ]
 
 script(name,author,logo,background,roles,pdf)
