@@ -8,13 +8,8 @@ logo = ""
 background = ""
 pdf = "Y"
 
-roles = [
-    'washerwoman',
-    'drunk',
-    'scarletwoman',
-    'pukka'
-]
+roles = tb
 
-script(name,author,logo,background,roles)
+#script(name,author,logo,background,roles)
 if pdf == "Y":
-    pdf_script(roles)
+    pdf_script(name,roles)

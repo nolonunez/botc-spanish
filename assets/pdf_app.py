@@ -1,9 +1,10 @@
 from fpdf import FPDF
+from fpdf.fonts import FontFace
 import csv
 
-def pdf_script(roles):
+def pdf_script(name,roles):
     
-    print("\n"+"Generando archivo .pdf, esto suele tardar más.\n")
+    print('\nGenerando archivo .pdf\n')
     import assets.amy
     amys = assets.amy.amy
 
@@ -16,8 +17,9 @@ def pdf_script(roles):
     #w = width, h = height
 
     pdf = FPDF('P','mm','Letter')
-    pdf.set_margin(15)
+    pdf.set_margin(13)
     pdf.add_page()
+    pdf.set_font('helvetica', '', 7.5)
 
     roles_amyd = []
 
@@ -26,11 +28,10 @@ def pdf_script(roles):
             roles_amyd.append(amy)
 
     teams = ['townsfolk','outsider','minion','demon']
-    script = []
-    t = 0
-    o = 0
-    m = 0
-    d = 0
+    townsfolk = []
+    outsider = []
+    minion = []
+    demon = []
 
     for n in roles_amyd:
         char = []
@@ -46,41 +47,40 @@ def pdf_script(roles):
                 if row[0] == n:
                     char.append(row[1])
                     char.append(row[10])
-                    char.append(row[3])
 
                     if row[3] == "townsfolk":
-                        t = t + 1
+                        townsfolk.append(char)
                     elif row[3] == "outsider":
-                        o = o + 1
+                        outsider.append(char)
                     elif row[3] == "minion":
-                        m = m + 1
+                        minion.append(char)
                     elif row[3] == "demon":
-                        d = d + 1 
-            
-            script.append(char)
-    
+                        demon.append(char)
+
+    teams_list = [townsfolk,outsider,minion,demon]
+
     i = 0
-    for n in script:
-        if i == 0:
-            pdf.image('./assets/pdf_assets/'+ teams[0] +'.png',w=pdf.epw)
-        if i == t:
-            pdf.image('./assets/pdf_assets/'+ teams[1] +'.png',w=pdf.epw)
-        if i == t + o:
-            pdf.image('./assets/pdf_assets/'+ teams[2] +'.png',w=pdf.epw)    
-        if i == t + o + m:
-            pdf.image('./assets/pdf_assets/'+ teams[3] +'.png',w=pdf.epw)
-        
-        pdf.image(n[0],w=10,h=10)
-       
-        pdf.set_font('helvetica', 'B', 8)
-        pdf.cell(24,10,n[1])
-
-        pdf.set_font('helvetica', '', 8)
-        pdf.cell(0,10,n[2],0,1,'L')
-
-        print(n[1] + ' listo.')
-        
+    for m in teams_list:
+        pdf.image('./assets/pdf_assets/'+ teams[i] +'.png',w=pdf.epw)
+        with pdf.table(borders_layout='NONE',line_height=3,col_widths=(5,8.5,60),text_align='LEFT',first_row_as_headings=False) as table:
+            for n in m:
+                row = table.row()
+                j = 0
+                for datum in n:
+                    if j == 0:
+                        row.cell(img=datum, img_fill_width=True)
+                    elif j == 1:
+                        row.cell(datum,style=FontFace(emphasis='BOLD'))
+                    else:
+                        row.cell(datum)
+                        print(n[1] + ' listo.')
+                    
+                    j = j + 1
         i = i + 1
 
-    pdf.output('./botc_scripts/pdf_1.pdf')
-    print('\n' + '.pdf listo')
+    total = len(townsfolk) + len(outsider) + len(minion) + len(demon)
+
+    pdf.output('./botc_scripts/' + name.replace(" ","_") + '.pdf')
+    print("\nSe agregaron " + str(total) + " de " + str(len(roles)) + " roles en total.")
+    print("La distribución es " + str(len(townsfolk)) + "/" + str(len(outsider)) + "/" + str(len(minion)) + "/" + str(len(demon)) + ".")
+    print(name + '.pdf está listo.')

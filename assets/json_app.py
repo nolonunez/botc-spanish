@@ -3,6 +3,8 @@ import csv
 
 def script(name,author,logo,background,roles):
 
+    print('Generando archivo .json\n')
+
     credentials = {
     "id":"_meta",
     "name": name,
@@ -153,4 +155,4 @@ def script(name,author,logo,background,roles):
 
     print("\nSe agregaron " + str(n) + " de " + str(n2) + " roles en total.")
     print("La distribución es " + str(t) + "/" + str(o) + "/" + str(m) + "/" + str(d) + ".")
-    print( name + " está listo.")
+    print( name + ".json está listo.")
