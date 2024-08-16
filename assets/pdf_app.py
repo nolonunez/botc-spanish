@@ -65,7 +65,7 @@ def pdf_script(name,author,roles):
     i = 0
     for m in teams_list:
         pdf.image('./assets/pdf_assets/'+ teams[i] +'.png',w=pdf.epw)
-        with pdf.table(borders_layout='NONE',line_height=4,col_widths=(3.5,8.5,60),text_align='LEFT',first_row_as_headings=False) as table:
+        with pdf.table(borders_layout='NONE',line_height=4,col_widths=(3.5,8.5,56),text_align='LEFT',first_row_as_headings=False) as table:
             for n in m:
                 row = table.row()
                 j = 0

@@ -2,6 +2,7 @@
     {
         "id": "_meta",
         "name": "El Proyecto Chaneque",
+        "logo": "https://botc.app/assets/background1-C0iW8pNy.webp",
         "author": "Nolo",
         "background": "https://botc.app/assets/background1-C0iW8pNy.webp"
     },
@@ -235,10 +236,7 @@
         ],
         "ability": "En tu 1ra noche, escoge a un jugador (no t\u00fa mismo): eres de su equipo (no sabes cu\u00e1l) a\u00fan si est\u00e1s borracho o envenenado.",
         "setup": false,
-        "image": [
-            "https://wiki.bloodontheclocktower.com//images/2/25/Icon_ogre.png",
-            "https://botc.app/assets/ogre_e-k2lur_NF.webp"
-        ]
+        "image": "https://wiki.bloodontheclocktower.com//images/2/25/Icon_ogre.png"
     },
     {
         "id": "sweetheart_es",

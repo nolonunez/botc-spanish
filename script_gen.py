@@ -1,13 +1,15 @@
 from assets.json_app import script
-from assets.base_scripts import tb,snv,bmr
 
-name = "Luna de Sangre"
-author = "Nolo (trad.)"
+name = ""
+author = ""
 logo = ""
 background = ""
-#'Y' or 'N'
-pdf = "Y"
 
-roles = bmr
+#'Y' or 'N'
+pdf = "N"
+
+roles = [
+
+]
 
 script(name,author,logo,background,roles,pdf)

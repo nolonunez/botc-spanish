@@ -1,14 +1,9 @@
 #TROUBLE BREWING
-
-name = "Destilando Problemas"
-author = ""
-logo = "https://www.bloodstar.xyz/p/nolo/Trouble_Brewing_ES_FULL/_meta.png"
-
 tb = [
-"chef",
 "washerwoman",
-"investigator",
 "librarian",
+"investigator",
+"chef",
 "empath",
 "fortuneteller",
 "undertaker",
@@ -17,29 +12,24 @@ tb = [
 "soldier",
 "ravenkeeper",
 "virgin",
-"saint",
 "mayor",
 "butler",
-"drunk",
+"saint",
 "recluse",
+"drunk",
 "poisoner",
 "spy",
 "baron",
 "scarletwoman",
 "imp",
-"beggar",
-"thief",
 "bureaucrat",
+"thief",
 "gunslinger",
-"scapegoat"
+"scapegoat",
+"beggar"
 ]
 
 #SECTS & VIOLETS
-
-name = "De Lirios y Sectas"
-author = ""
-logo = ""
-
 snv = [
 "clockmaker",
 "dreamer",
@@ -49,65 +39,60 @@ snv = [
 "towncrier",
 "oracle",
 "savant",
+"juggler",
+"artist",
 "seamstress",
 "philosopher",
-"artist",
-"juggler",
 "sage",
-"mutant",
 "sweetheart",
-"barber",
+"mutant",
 "klutz",
-"eviltwin",
+"barber",
 "witch",
 "cerenovus",
 "pithag",
-"fanggu",
-"vigormortis",
+"eviltwin",
 "nodashii",
 "vortox",
+"vigormortis",
+"fanggu",
+"barista",
+"harlot",
 "butcher",
 "bonecollector",
-"harlot",
-"barista",
 "deviant"
 ]
 
 #BAD MOON RISING
-
-name = "Luna de Sangre"
-author = ""
-logo = ""
-
 bmr = [
 "grandmother",
 "sailor",
 "chambermaid",
-"exorcist",
 "innkeeper",
 "gambler",
+"exorcist",
 "gossip",
 "courtier",
 "professor",
-"minstrel",
-"tealady",
-"pacifist",
 "fool",
+"pacifist",
+"tealady",
+"minstrel",
 "goon",
-"lunatic",
 "tinker",
 "moonchild",
+"lunatic",
 "godfather",
 "devilsadvocate",
 "assassin",
 "mastermind",
-"zombuul",
 "pukka",
 "shabaloth",
 "po",
-"apprentice",
+"zombuul",
 "matron",
-"voudon",
 "judge",
-"bishop"
+"apprentice",
+"bishop",
+"voudon"
 ]
