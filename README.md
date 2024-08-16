@@ -9,5 +9,5 @@ pip install fpdf2
  -Aún no se puede apreciar visualmente cuando alguien cambia de equipo ya que no encuentro las imagenes de cada personaje con su equipo cambiado. <br> 
  -Los jinxes no los he puesto. <br>
  -Vodú no funciona. <br>
- -Banshee necesita revivirse recuperar sus votos
--trabajando en un .py que actualice todos los scripts a la versión más actual
+ -Banshee necesita revivirse recuperar sus votos <br>
+ -trabajando en un .py que actualice todos  los scripts a la versión más actual
