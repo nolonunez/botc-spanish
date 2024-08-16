@@ -10,3 +10,4 @@ pip install fpdf2
  -Los jinxes no los he puesto. <br>
  -Vodú no funciona. <br>
  -Banshee necesita revivirse recuperar sus votos
+-trabajando en un .py que actualice todos los scripts a la versión más actual
