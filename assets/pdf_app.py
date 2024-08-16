@@ -10,18 +10,21 @@ def pdf_script(name,author,roles):
 
     #pip install fpdf2
 
-    pdf = FPDF('P','mm','Letter')
+    pdf = FPDF('P','mm','Legal')
     pdf.set_left_margin(13)
     pdf.set_top_margin(3)
     pdf.set_auto_page_break(3)
     pdf.set_right_margin(5)
     pdf.add_page()
-    
     pdf.set_font('helvetica', 'I', 10)
-    if author == '':
-        pdf.cell(0,5,name,0,1, align = 'C')
-    else:
-        pdf.cell(0,5,name + ' por ' + author,0,1, align = 'C')
+
+    if name != "":
+        with pdf.table(borders_layout='NONE',col_widths=(len(name)*1.2,60),text_align='LEFT',first_row_as_headings=False) as table:
+            row = table.row()
+            row.cell(name,style=FontFace(emphasis='ITALICS',size_pt=15))
+            if author != '':
+                row.cell('hecho por '+ author,style=FontFace(size_pt=8))
+
     pdf.set_font('helvetica', '', 8)
 
     roles_amyd = []
@@ -65,7 +68,7 @@ def pdf_script(name,author,roles):
     i = 0
     for m in teams_list:
         pdf.image('./assets/pdf_assets/'+ teams[i] +'.png',w=pdf.epw)
-        with pdf.table(borders_layout='NONE',line_height=4,col_widths=(3.5,8.5,56),text_align='LEFT',first_row_as_headings=False) as table:
+        with pdf.table(borders_layout='NONE',line_height=4,col_widths=(3.5,8.5,54),text_align='LEFT',first_row_as_headings=False) as table:
             for n in m:
                 row = table.row()
                 j = 0
