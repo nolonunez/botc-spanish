@@ -22,6 +22,8 @@ def pdf_script(name,author,roles):
     minion = []
     demon = []
 
+    fabled = []
+
     for n in roles_amyd:
         char = []
         with open('./assets/es_MX.csv') as file, open('./assets/images.csv') as file_png:
@@ -45,10 +47,12 @@ def pdf_script(name,author,roles):
                         minion.append(char)
                     elif row[3] == "demon":
                         demon.append(char)
+                    elif row[3] == "fabled":
+                        fabled.append(char)
 
     teams_list = [townsfolk,outsider,minion,demon]
     
-    total = len(townsfolk) + len(outsider) + len(minion) + len(demon)
+    total = len(townsfolk) + len(outsider) + len(minion) + len(demon) + len(fabled)
 
     #if total > 23:
     #    pdf = FPDF('P','mm','Legal')
@@ -63,12 +67,20 @@ def pdf_script(name,author,roles):
     pdf.add_page()
     pdf.set_font('helvetica', 'I', 10)
 
+    name_length = 60 - len(fabled)
+    col_fb = [len(name)*1.2,name_length]
+    for i in fabled:
+        col_fb.append(3.5)
+
     if name != "":
-        with pdf.table(borders_layout='NONE',col_widths=(len(name)*1.2,60),text_align='LEFT',first_row_as_headings=False) as table:
+        with pdf.table(borders_layout='NONE',col_widths=(col_fb),text_align='LEFT',first_row_as_headings=False) as table:
             row = table.row()
             row.cell(name,style=FontFace(emphasis='ITALICS',size_pt=15))
             if author != '':
                 row.cell('hecho por '+ author,style=FontFace(size_pt=8))
+            if len(fabled) > 0:
+                for data in fabled:
+                        row.cell(img=data[0],img_fill_width=True)
 
     pdf.set_font('helvetica', '', 8)
 

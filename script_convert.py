@@ -1,7 +1,7 @@
 from assets.json_source import source_json
 
-name = 'El Proyecto Chaneque'
-author = 'Nolo'
+name = ''
+author = ''
 #'Y' or 'N'
 pdf='Y'
 
