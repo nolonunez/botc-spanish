@@ -2,29 +2,33 @@ import json
 from assets.json_app import script
 from assets.base_scripts import tb,snv,bmr
 
-def source_json(name,author,pdf):
+def source_json(file,name,author,pdf):
 
     name_og = name
     author_og = author
 
-    f = open('./source.json')
+    if file != 'all':
+        f = open(file)
+    else:
+        f = file
     data = json.load(f)
-
-    id_script = data[0]
 
     name = ''
     author = ''
     logo = ''
     background = ''
+
+    id_script = data[0]
+    if 'id' in id_script and id_script['id'] == '_meta':
+        if 'name' in id_script and id_script['name'] != "":
+            name = id_script['name']
+        if 'author' in id_script and id_script['author'] != "":
+            author = id_script['author']
+        if 'logo' in id_script and id_script['logo'] != "":
+            logo = id_script['logo']
+        if 'background' in id_script and id_script['background'] != "":
+            background = id_script['background']   
     
-    if 'name' in id_script and id_script['name'] != "":
-        name = id_script['name']
-    if 'author' in id_script and id_script['author'] != "":
-        author = id_script['author']
-    if 'logo' in id_script and id_script['logo'] != "":
-        logo = id_script['logo']
-    if 'background' in id_script and id_script['background'] != "":
-        background = id_script['background']
 
     roles = []
     

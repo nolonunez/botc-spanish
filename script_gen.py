@@ -1,12 +1,12 @@
 from assets.json_app import script
 
-name = ""
-author = ""
-logo = ""
-background = ""
+name = ''
+author = ''
+logo = ''
+background = ''
 
 #'Y' or 'N'
-pdf = "N"
+pdf = 'N'
 
 roles = [
 

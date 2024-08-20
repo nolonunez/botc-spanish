@@ -1,4 +1,12 @@
 from fpdf import FPDF
+class FPDF(FPDF):
+        def footer(self):
+            self.set_y(-15)
+            self.set_font('helvetica', '', 8)
+            self.cell(40,10, '© Steven Medway, bloodontheclocktower.com; unofficial translation by @nolonunez', 0, 0, 'L')
+            self.set_font('helvetica', 'B', 8)
+            self.cell(140,10,'*No la Primera Noche',0,0,'R')
+
 from fpdf.fonts import FontFace
 import csv
 
@@ -59,12 +67,6 @@ def pdf_script(name,author,roles):
     #else:
     #    pdf = FPDF('P','mm','Letter')
 
-    class PDF(FPDF):
-        def footer(self):
-            self.set_y(-15)
-            self.set_font('helvetica', '', 8)
-            self.cell(0, 10, '© Steven Medway, bloodontheclocktower.com; translated by: @nolonunez', 0, 0, 'L')
-
     pdf = FPDF('P','mm','Legal')    
     pdf.set_left_margin(13)
     pdf.set_top_margin(3)
@@ -113,11 +115,6 @@ def pdf_script(name,author,roles):
                     j = j + 1
         i = i + 1
     
-    with pdf.table(borders_layout='NONE',col_widths=(pdf.w/2,pdf.w/2),first_row_as_headings=False) as table:
-        row = table.row()
-        row.cell('© Steven Medway, bloodontheclocktower.com; translated by: @nolonunez','L')
-        row.cell('*No la Primera Noche','R')
-
     from assets.base_scripts import tb,snv,bmr
     if roles == tb or roles == snv or roles == bmr:
         path = "base_three/"
