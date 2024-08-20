@@ -1,9 +1,9 @@
 from assets.json_source import source_json
 
-name = 'No Greater Joy'
-author = 'Steven Medway'
+name = ''
+author = ''
 #'Y' or 'N'
 pdf='Y'
 
-file = './source.json'
+file = './botc_scripts/teensy/Race_to_the_Bottom.json'
 source_json(file,name,author,pdf)

@@ -145,7 +145,7 @@ def script(name,author,logo,background,roles,pdf):
     if roles == tb or roles == snv or roles == bmr:
         path = "base_three/"
     
-    elif len(roles) > 12:
+    elif t + o + m + d > 12:
         path = "custom/"
     else:
         path = "teensy/"

@@ -76,14 +76,16 @@ def pdf_script(name,author,roles):
     pdf.set_font('helvetica', 'I', 10)
 
     name_length = 60 - len(fabled)
-    col_fb = [len(name)*1.2,name_length]
+    col_fb = [name_length]
     for i in fabled:
         col_fb.append(3.5)
+        col_fb.append(len(i[1])*0.6)
 
     if name != "":
         with pdf.table(borders_layout='NONE',col_widths=(col_fb),text_align='LEFT',first_row_as_headings=False) as table:
             row = table.row()
             row.cell(name,style=FontFace(emphasis='ITALICS',size_pt=15))
+            row = table.row()
             if author != '':
                 from assets.base_scripts import tb,snv,bmr
                 if roles == tb or roles == bmr or roles == snv:
@@ -93,6 +95,8 @@ def pdf_script(name,author,roles):
             if len(fabled) > 0:
                 for data in fabled:
                         row.cell(img=data[0],img_fill_width=True)
+                        row.cell(data[1],style=FontFace(size_pt=8))
+                        print(data[1] +' listo.')
 
     pdf.set_font('helvetica', '', 8)
 
@@ -119,7 +123,7 @@ def pdf_script(name,author,roles):
     if roles == tb or roles == snv or roles == bmr:
         path = "base_three/"
     
-    elif len(roles) > 12:
+    elif len(townsfolk) + len(outsider) + len(minion) + len(demon) > 12:
         path = "custom/"
     else:
         path = "teensy/"

@@ -7,10 +7,7 @@ def source_json(file,name,author,pdf):
     name_og = name
     author_og = author
 
-    if file != 'all':
-        f = open(file)
-    else:
-        f = file
+    f = open(file)
     data = json.load(f)
 
     name = ''
