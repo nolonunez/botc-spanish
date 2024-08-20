@@ -1,7 +1,7 @@
 from assets.json_source import source_json
 
-name = 'Uncertain Death'
-author = 'Matt'
+name = 'No Greater Joy'
+author = 'Steven Medway'
 #'Y' or 'N'
 pdf='Y'
 
