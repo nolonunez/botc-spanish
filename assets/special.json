@@ -58,6 +58,12 @@
         {
             "name": "bag-disabled",
             "type": "selection"
+        },
+        {
+            "name": "pointing",
+            "type": "ability",
+            "global": "minion",
+            "time": "night"
         }
     ],
     "marionette" : [

@@ -5,5 +5,5 @@ author = ''
 #'Y' or 'N'
 pdf='Y'
 
-file = './botc_scripts/teensy/Race_to_the_Bottom.json'
+file = './source.json'
 source_json(file,name,author,pdf)
