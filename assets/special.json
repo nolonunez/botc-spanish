@@ -88,6 +88,48 @@
             "type": "vote",
             "value": 2
         }
+    ],
+    "legion" : [
+        {
+            "name": "bag-duplicate",
+            "type": "selection"
+        }
+    ],
+    
+    "riot" : [
+        {
+            "name": "bag-duplicate",
+            "type": "selection"
+        }
+    ],
+    "boomdandy" : [
+        {
+            "name": "pointing",
+            "type": "ability"
+        }
+    ],
+    "ferryman" : [
+        {
+            "name": "ghost-votes",
+            "type": "ability"
+        }
+    ],
+    "gardener" : [
+        {
+            "name": "distribute-roles",
+            "type": "ability"
+        }
+    ],
+    "organgrinder": [
+        {
+            "name": "hidden",
+            "type": "vote"
+        }
+    ],
+    "alchemist": [
+        {
+            "name": "replace-character",
+            "type": "reveal"
+        }
     ]
 }
- 
