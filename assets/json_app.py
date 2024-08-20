@@ -56,7 +56,7 @@ def script(name,author,logo,background,roles,pdf):
             obj_list = ["id","name","edition","team","firstNight","firstNightReminder","otherNight","otherNightReminder","reminders","remindersGlobal","ability","setup","special","jinxes"]
 
             x = 0
-            while x < 13:
+            while x < 14:
                 with open('./assets/es_MX.csv') as file:
                     csv_reader = csv.reader(file)
 
@@ -117,6 +117,23 @@ def script(name,author,logo,background,roles,pdf):
 
                                     fs.close()
                                 
+                                elif x == 13:
+                                    
+                                    char = row[0]
+                                    with open('./assets/jinxes.csv') as fj:
+                                        jinxes = csv.reader(fj)
+                                        for row_jinx in jinxes:
+                                            try:
+                                                if row_jinx[0]== char:
+                                                    jinx_doc = {'id':'','reason':''}
+
+                                                    jinx_doc['id'] = row_jinx[1] + '_es'
+                                                    jinx_doc['reason'] = row_jinx[2]
+                                                    roles_dic['jinxes'] = [jinx_doc]
+                                            except:
+                                                continue
+                                        fj.close()
+
                                 else:
                                     roles_dic[obj_name] = row[x]
                         except:
