@@ -201,6 +201,7 @@ amy = [
 "sentinel",
 "spiritofivory",
 "djinn",
+"carl",
 #Experimental
 "stormcatcher",
 "bootlegger",

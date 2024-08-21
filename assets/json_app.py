@@ -138,7 +138,8 @@ def script(name,author,logo,background,roles,pdf):
                                                         ji = ji + 1
                                             except:
                                                 continue
-                                    roles_dic['jinxes'] = jinx_list
+                                    if jinx_list:
+                                        roles_dic['jinxes'] = jinx_list
                                     fj.close()
 
                                 else:
