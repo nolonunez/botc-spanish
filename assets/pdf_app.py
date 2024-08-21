@@ -1,7 +1,7 @@
 from fpdf import FPDF
 class FPDF(FPDF):
         def footer(self):
-            self.set_y(-15)
+            self.set_y(-10)
             self.set_font('helvetica', '', 8)
             self.cell(40,10, '© Steven Medway, bloodontheclocktower.com; unofficial translation by @nolonunez', 0, 0, 'L')
             self.set_font('helvetica', 'B', 8)
@@ -60,14 +60,18 @@ def pdf_script(name,author,roles):
 
     teams_list = [townsfolk,outsider,minion,demon]
     
-    total = len(townsfolk) + len(outsider) + len(minion) + len(demon) + len(fabled)
+    total = len(townsfolk) + len(outsider) + len(minion) + len(demon)
 
-    #if total > 23:
-    #    pdf = FPDF('P','mm','Legal')
-    #else:
-    #    pdf = FPDF('P','mm','Letter')
+    if total > 23:
+        pdf = FPDF('P','mm','Legal')
+    elif total > 12 and len(fabled) > 0:
+        pdf = FPDF('P','mm','Legal')
+    else:
+        pdf = FPDF('P','mm','Letter')
+    
+    total = total + len(fabled)
 
-    pdf = FPDF('P','mm','Legal')    
+    #pdf = FPDF('P','mm','Legal')    
     pdf.set_left_margin(13)
     pdf.set_top_margin(3)
     pdf.set_auto_page_break(3)
