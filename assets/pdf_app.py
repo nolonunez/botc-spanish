@@ -102,21 +102,22 @@ def pdf_script(name,author,roles):
 
     i = 0
     for m in teams_list:
-        pdf.image('./assets/pdf_assets/'+ teams[i] +'.png',w=pdf.epw)
-        with pdf.table(borders_layout='NONE',line_height=4,col_widths=(3.5,8.5,54),text_align='LEFT',first_row_as_headings=False) as table:
-            for n in m:
-                row = table.row()
-                j = 0
-                for datum in n:
-                    if j == 0:
-                        row.cell(img=datum,img_fill_width=True)
-                    elif j == 1:
-                        row.cell(datum,style=FontFace(emphasis='BOLD'))
-                    else:
-                        row.cell(datum)
-                        print(n[1] + ' listo.')
-                    
-                    j = j + 1
+        if m:
+            pdf.image('./assets/pdf_assets/'+ teams[i] +'.png',w=pdf.epw)
+            with pdf.table(borders_layout='NONE',line_height=4,col_widths=(3.5,8.5,54),text_align='LEFT',first_row_as_headings=False) as table:
+                for n in m:
+                    row = table.row()
+                    j = 0
+                    for datum in n:
+                        if j == 0:
+                            row.cell(img=datum,img_fill_width=True)
+                        elif j == 1:
+                            row.cell(datum,style=FontFace(emphasis='BOLD'))
+                        else:
+                            row.cell(datum)
+                            print(n[1] + ' listo.')
+                        
+                        j = j + 1
         i = i + 1
     
     from assets.base_scripts import tb,snv,bmr
