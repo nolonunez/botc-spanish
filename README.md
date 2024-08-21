@@ -80,10 +80,8 @@ pip install fpdf2
 <p align="right">(<a href="#readme-top">inicio</a>)</p>
 
 ## Notas
--Aún no se puede apreciar visualmente cuando alguien cambia de equipo ya que no encuentro las imagenes de cada personaje con su equipo cambiado. <br> 
--Los jinxes no los he puesto. <br>
+-Aún no se puede apreciar visualmente cuando alguien cambia de equipo ya que no encuentro las imagenes de cada personaje con su equipo cambiado. <br>
 -Vodú no funciona. <br>
--Se necesita actualizar la descripción del Plague Doctor.<br>
 -Banshee necesita revivirse para recuperar sus votos.
 
 ## Contacto
