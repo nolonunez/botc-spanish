@@ -45,6 +45,8 @@ def script(name,author,logo,background,roles,pdf):
     o = 0
     m = 0
     d = 0
+    #jinxes
+    ji = 0
 
     for amy in amys:
 
@@ -57,7 +59,7 @@ def script(name,author,logo,background,roles,pdf):
 
             x = 0
             while x < 14:
-                with open('./assets/es_MX.csv') as file:
+                with open('./assets/es_MX.csv', encoding="utf-8") as file:
                     csv_reader = csv.reader(file)
 
                     for row in csv_reader:
@@ -120,19 +122,24 @@ def script(name,author,logo,background,roles,pdf):
                                 elif x == 13:
                                     
                                     char = row[0]
-                                    with open('./assets/jinxes.csv') as fj:
+                                    jinx_list = []
+                                    with open('./assets/jinxes.csv', encoding="utf-8") as fj:
                                         jinxes = csv.reader(fj)
                                         for row_jinx in jinxes:
                                             try:
                                                 if row_jinx[0]== char:
                                                     jinx_doc = {'id':'','reason':''}
 
-                                                    jinx_doc['id'] = row_jinx[1] + '_es'
-                                                    jinx_doc['reason'] = row_jinx[2]
-                                                    roles_dic['jinxes'] = [jinx_doc]
+                                                    if row_jinx[1] in roles:
+                                                        jinx_doc['id'] = row_jinx[1] + '_es'
+                                                        jinx_doc['reason'] = row_jinx[2]
+                                                    
+                                                        jinx_list.append(jinx_doc)
+                                                        ji = ji + 1
                                             except:
                                                 continue
-                                        fj.close()
+                                    roles_dic['jinxes'] = jinx_list
+                                    fj.close()
 
                                 else:
                                     roles_dic[obj_name] = row[x]
@@ -141,7 +148,7 @@ def script(name,author,logo,background,roles,pdf):
                 x = x + 1
 
             #this doesn't include the alignment changed images, as I can't find them in the internet
-            with open('./assets/images.csv') as file:
+            with open('./assets/images.csv', encoding="utf-8") as file:
                     csv_reader2 = csv.reader(file)
                     for row in csv_reader2:
                         try:
@@ -173,6 +180,7 @@ def script(name,author,logo,background,roles,pdf):
 
     print("\nSe agregaron " + str(n) + " de " + str(n2) + " roles en total.")
     print("La distribución es " + str(t) + "/" + str(o) + "/" + str(m) + "/" + str(d) + ".")
+    print("Se añadieron " + str(ji) + " jinxes.")
     print( name + ".json está listo.")
 
     if pdf == "Y":

@@ -34,7 +34,7 @@ def pdf_script(name,author,roles):
 
     for n in roles_amyd:
         char = []
-        with open('./assets/es_MX.csv') as file, open('./assets/images.csv') as file_png:
+        with open('./assets/es_MX.csv', encoding="utf-8") as file, open('./assets/images.csv', encoding="utf-8") as file_png:
             csv_reader = csv.reader(file)
             csv_image = csv.reader(file_png)
 
