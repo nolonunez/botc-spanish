@@ -1,3 +1,5 @@
 Copyright (c) Steven Medway
 
-Every character in this databased is owned by Steven Medway, The Pandemonium Institute and Blood on the Clocktower. This is an unofficial translation.
+Every character* in this database is owned by Steven Medway, The Pandemonium Institute and Blood on the Clocktower. This is an unofficial translation.
+
+*(except those which "edition" is not {'tb','bmr','snv','experimental'}; i.e. homebrew characters)
