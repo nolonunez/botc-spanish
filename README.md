@@ -82,7 +82,8 @@ pip install fpdf2
 ## Notas
 -Aún no se puede apreciar visualmente cuando alguien cambia de equipo ya que no encuentro las imagenes de cada personaje con su equipo cambiado. <br>
 -Vodú no funciona. <br>
--Banshee necesita revivirse para recuperar sus votos.
+-Banshee necesita revivirse para recuperar sus votos.<br>
+-En los PDFs aún no se visualizan los jinxes ni los viajeros. Ni el orden de las noches.
 
 ## Contacto
 
