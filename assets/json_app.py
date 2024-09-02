@@ -181,8 +181,9 @@ def script(name,author,logo,background,roles,pdf,lang):
                                     
                                     img = row[2]+",https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+"1.png"
                                     img = img+",https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+"2.png"
+                                    img = img.split(",")
 
-                                    roles_dic["image"] = row[2] 
+                                    roles_dic["image"] = img 
                         except:
                             continue
 
@@ -198,9 +199,9 @@ def script(name,author,logo,background,roles,pdf,lang):
         path = lang + "/base_three/"
     
     elif len(town) + len(outs) + len(minion) + len(demons) > 12:
-        path = lang + "custom/"
+        path = lang + "/custom/"
     else:
-        path = lang + "teensy/"
+        path = lang + "/teensy/"
 
     with open("./botc_scripts/" + path + name.replace(" ","_") + ".json", "w+") as f:
         json.dump(script, f)  

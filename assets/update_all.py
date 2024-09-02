@@ -2,8 +2,8 @@ import os, glob, json
 from assets.json_source import source_json
 
 def update_all(lang,pdf):
-    path = './botc_scripts/'
-    folders = ['base_three', 'custom', 'teensy']
+    path = './botc_scripts/' + lang
+    folders = ['/base_three', '/custom', '/teensy']
 
     for folder in folders:
         for file in glob.glob(os.path.join(path + folder, '*.json')):
