@@ -11,7 +11,6 @@ background = ''
 pdf = 'N'
 
 roles = [
-    
 ]
 
 script(name,author,logo,background,roles,pdf,lang)

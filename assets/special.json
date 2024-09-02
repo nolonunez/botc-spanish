@@ -129,7 +129,8 @@
     "organgrinder": [
         {
             "name": "hidden",
-            "type": "vote"
+            "type": "vote",
+            "time": "day"
         }
     ],
     "alchemist": [

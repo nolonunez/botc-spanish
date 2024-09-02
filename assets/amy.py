@@ -148,6 +148,7 @@ amy = [
 "lleech",
 "nodashii",
 "imp",
+"lordoftyphon",
 "ojo",
 "shabaloth",
 "po",
