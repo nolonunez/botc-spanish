@@ -187,4 +187,4 @@ def script(name,author,logo,background,roles,pdf,lang):
     print( name + ".json está listo.")
 
     if pdf == "Y":
-        pdf_script(name,author,roles)
+        pdf_script(name,author,roles,lang)
