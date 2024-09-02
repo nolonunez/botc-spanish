@@ -150,14 +150,18 @@ def script(name,author,logo,background,roles,pdf,lang):
                             continue
                 x = x + 1
 
-            #this doesn't include the alignment changed images, as I can't find them in the internet
-            with open('./assets/images/images.csv') as file:
+            with open('./assets/images/images.csv') as file, open(lang_pack, encoding="utf-8") as file_ref:
                     csv_reader2 = csv.reader(file)
+                    ref = csv.reader(file_ref)
+
                     for row in csv_reader2:
                         try:
                             if row[1] == amy:
-
-                                roles_dic["image"] = row[2]
+                                for role in ref:
+                                    if role[0] == row[1] and role[3] != "traveler":    
+                                        roles_dic["image"] = [row[2],"https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+".png"]
+                                    else:
+                                        roles["image"] = row[2] 
                         except:
                             continue
 
