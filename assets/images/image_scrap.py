@@ -8,7 +8,7 @@ def png(category):
 
 	data = []
 	df = pd.DataFrame(data, columns=["role", "image"])
-	df.to_csv("images.csv")
+	df.to_csv("./assets/images/images.csv")
 
 	url = category
 	response = requests.get(url)
@@ -42,7 +42,7 @@ def png(category):
 
 	dff = pd.DataFrame(data, columns=["role", "image"])
 	dfl.append(dff)
-	df = pd.concat(dfl).to_csv("./assets/images.csv")
+	df = pd.concat(dfl).to_csv("./assets/images/images.csv")
 
 	print("Images Ready")
 
@@ -55,7 +55,7 @@ def png2(category):
 
 	data = []
 	df = pd.DataFrame(data, columns=["role", "image"])
-	df.to_csv("images.csv")
+	df.to_csv("./assets/images/images.csv")
 
 	url = category
 	response = requests.get(url)
@@ -81,7 +81,7 @@ def png2(category):
 
 	dff = pd.DataFrame(data, columns=["role", "image"])
 	dfl.append(dff)
-	df = pd.concat(dfl).to_csv("./assets/images.csv")
+	df = pd.concat(dfl).to_csv("./assets/images/images.csv")
 
 	print("Images Ready")
 

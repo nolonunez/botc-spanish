@@ -151,7 +151,7 @@ def script(name,author,logo,background,roles,pdf,lang):
                 x = x + 1
 
             #this doesn't include the alignment changed images, as I can't find them in the internet
-            with open('./assets/images.csv') as file:
+            with open('./assets/images/images.csv') as file:
                     csv_reader2 = csv.reader(file)
                     for row in csv_reader2:
                         try:
