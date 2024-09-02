@@ -42,7 +42,7 @@ def png(category):
 
 	dff = pd.DataFrame(data, columns=["role", "image"])
 	dfl.append(dff)
-	df = pd.concat(dfl).to_csv("images.csv")
+	df = pd.concat(dfl).to_csv("./assets/images.csv")
 
 	print("Images Ready")
 

@@ -8,5 +8,5 @@ def utf(csvfile):
 
     print(csvfile + " ready")
 
-utf("es_MX")
+utf("database")
 utf("jinxes")
