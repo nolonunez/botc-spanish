@@ -1,7 +1,7 @@
 import os, glob, json
 from assets.json_source import source_json
 
-def update_all(lang):
+def update_all(lang,pdf):
     path = './botc_scripts/'
     folders = ['base_three', 'custom', 'teensy']
 
@@ -16,7 +16,7 @@ def update_all(lang):
                 
                 print('\nActualizando ' + name_id + '.')
                 
-                source_json(file,name='',author='',pdf='Y',lang=lang)
+                source_json(file,name='',author='',pdf=pdf,lang=lang)
                 
                 print(name_id + ' actualizado.')
     print('\nTodos los archivos están actualizados a la versión más reciente.')
