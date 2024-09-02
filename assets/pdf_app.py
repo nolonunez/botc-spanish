@@ -127,12 +127,12 @@ def pdf_script(name,author,roles,lang):
     
     from assets.base_scripts import tb,snv,bmr
     if roles == tb or roles == snv or roles == bmr:
-        path = "base_three/"
+        path = lang + "/base_three/"
     
     elif len(townsfolk) + len(outsider) + len(minion) + len(demon) > 12:
-        path = "custom/"
+        path = lang + "/custom/"
     else:
-        path = "teensy/"
+        path = lang + "/teensy/"
 
     pdf.output('./botc_scripts/' + path + name.replace(" ","_") + '.pdf')
     print("\nSe agregaron " + str(total) + " de " + str(len(roles)) + " roles en total.")

@@ -43,10 +43,14 @@ def script(name,author,logo,background,roles,pdf,lang):
     #to count if every role was added
     n = 0
     n2 = len(roles)
-    t = 0
-    o = 0
-    m = 0
-    d = 0
+    town = []
+    outs = []
+    minion = []
+    demons = []
+    travels = []
+    fableds = []
+    #for characters not in travel or fabled
+    norm = []
     #jinxes
     ji = 0
 
@@ -77,13 +81,21 @@ def script(name,author,logo,background,roles,pdf,lang):
                                 elif x == 3:
                                     roles_dic[obj_name] = row[x]
                                     if row[x] == "townsfolk":
-                                        t = t + 1
+                                        town.append(row[0])
+                                        norm.append(row[0])
                                     elif row[x] == "outsider":
-                                        o = o + 1
+                                        outs.append(row[0])
+                                        norm.append(row[0])
                                     elif row[x] == "minion":
-                                        m = m + 1
+                                        minion.append(row[0])
+                                        norm.append(row[0])
                                     elif row[x] == "demon":
-                                        d = d + 1 
+                                        demons.append(row[0])
+                                        norm.append(row[0])
+                                    elif row[x] == "traveler":
+                                        travels.append(row[0])
+                                    elif row[x] == "fabled":
+                                        fableds.append(row[0])
                                 
                                 #firstNight and otherNight must be int in the official app
                                 elif x == 4 or x == 6:
@@ -149,19 +161,28 @@ def script(name,author,logo,background,roles,pdf,lang):
                         except:
                             continue
                 x = x + 1
-
-            with open('./assets/images/images.csv') as file, open(lang_pack, encoding="utf-8") as file_ref:
+            
+            with open('./assets/images/images.csv') as file:
                     csv_reader2 = csv.reader(file)
-                    ref = csv.reader(file_ref)
 
                     for row in csv_reader2:
                         try:
                             if row[1] == amy:
-                                for role in ref:
-                                    if role[0] == row[1] and role[3] != "traveler":    
-                                        roles_dic["image"] = [row[2],"https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+".png"]
-                                    else:
-                                        roles["image"] = row[2] 
+                                if row[1] in fableds:
+                                    roles_dic["image"] = row[2]
+                                elif row[1] in norm:
+
+                                    img = row[2]+",https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+".png"
+                                    img = img.split(",")
+
+                                    roles_dic["image"] = img
+                                
+                                elif row[1] in travels:
+                                    
+                                    img = row[2]+",https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+"1.png"
+                                    img = img+",https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+"2.png"
+
+                                    roles_dic["image"] = row[2] 
                         except:
                             continue
 
@@ -174,19 +195,19 @@ def script(name,author,logo,background,roles,pdf,lang):
     path = ""
 
     if roles == tb or roles == snv or roles == bmr:
-        path = "base_three/"
+        path = lang + "/base_three/"
     
-    elif t + o + m + d > 12:
-        path = "custom/"
+    elif len(town) + len(outs) + len(minion) + len(demons) > 12:
+        path = lang + "custom/"
     else:
-        path = "teensy/"
+        path = lang + "teensy/"
 
     with open("./botc_scripts/" + path + name.replace(" ","_") + ".json", "w+") as f:
         json.dump(script, f)  
     f.close()
 
     print("\nSe agregaron " + str(n) + " de " + str(n2) + " roles en total.")
-    print("La distribución es " + str(t) + "/" + str(o) + "/" + str(m) + "/" + str(d) + ".")
+    print("La distribución es " + str(len(town)) + "/" + str(len(outs)) + "/" + str(len(minion)) + "/" + str(len(demons)) + ".")
     print("Se añadieron " + str(ji) + " jinxes.")
     print( name + ".json está listo.")
 

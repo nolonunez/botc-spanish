@@ -49,14 +49,14 @@ def source_json(file,name,author,pdf,lang):
     f.close()
 
     if roles == tb:
-        name = 'Destilando Problemas'
-        author = '(Trouble Brewing)'
+        name = 'Trouble Brewing'
+        author = '(Destilando Problemas)'
     if roles == snv:
-        name = 'De Lirios y Sectas'
-        author = '(Sects and Violets)'
+        name = 'Sects and Violets'
+        author = '(De Lirios y Sectas)'
     if roles == bmr:
-        name = 'Luna de Sangre'
-        author = '(Bad Moon Rising)'
+        name = 'Bad Moon Rising'
+        author = '(Luna de Sangre)'
     
     if name == "" and name_og == "":
         name = "no_name"
