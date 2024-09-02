@@ -2,7 +2,7 @@ import json
 from assets.json_app import script
 from assets.base_scripts import tb,snv,bmr
 
-def source_json(file,name,author,pdf):
+def source_json(file,name,author,pdf,lang):
 
     name_og = name
     author_og = author
@@ -66,5 +66,5 @@ def source_json(file,name,author,pdf):
     if author_og != "":
         author = author_og
 
-    script(name,author,logo,background,roles,pdf)
+    script(name,author,logo,background,roles,pdf,lang)
 

@@ -1,5 +1,7 @@
 from assets.json_app import script
 
+lang = "es_MX"
+
 name = ''
 author = ''
 logo = ''
@@ -12,4 +14,4 @@ roles = [
     
 ]
 
-script(name,author,logo,background,roles,pdf)
+script(name,author,logo,background,roles,pdf,lang)

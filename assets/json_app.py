@@ -2,9 +2,11 @@ import json
 import csv
 from assets.pdf_app import pdf_script
 
-def script(name,author,logo,background,roles,pdf):
+def script(name,author,logo,background,roles,pdf,lang):
 
     print('Generando archivo .json\n')
+    lang_pack = "./assets/"+lang+"/database_bug.csv"
+    lang_pack_jinx = "./assets/"+lang+"/jinxes_bug.csv"
 
     credentials = {
     "id":"_meta",
@@ -59,7 +61,7 @@ def script(name,author,logo,background,roles,pdf):
 
             x = 0
             while x < 14:
-                with open('./assets/es_MX.csv', encoding="utf-8") as file:
+                with open(lang_pack, encoding="utf-8") as file:
                     csv_reader = csv.reader(file)
 
                     for row in csv_reader:
@@ -110,7 +112,7 @@ def script(name,author,logo,background,roles,pdf):
 
                                     char = row[0]
                                                                                                           
-                                    fs = open('./assets/special.json')
+                                    fs = open("./assets/special.json")
                                     special_data = json.load(fs)
 
                                     for i in special_data:
@@ -123,7 +125,7 @@ def script(name,author,logo,background,roles,pdf):
                                     
                                     char = row[0]
                                     jinx_list = []
-                                    with open('./assets/jinxes.csv', encoding="utf-8") as fj:
+                                    with open(lang_pack_jinx, encoding="utf-8") as fj:
                                         jinxes = csv.reader(fj)
                                         for row_jinx in jinxes:
                                             try:
@@ -149,7 +151,7 @@ def script(name,author,logo,background,roles,pdf):
                 x = x + 1
 
             #this doesn't include the alignment changed images, as I can't find them in the internet
-            with open('./assets/images.csv', encoding="utf-8") as file:
+            with open('./assets/images.csv') as file:
                     csv_reader2 = csv.reader(file)
                     for row in csv_reader2:
                         try:

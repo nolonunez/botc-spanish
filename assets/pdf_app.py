@@ -10,11 +10,12 @@ class FPDF(FPDF):
 from fpdf.fonts import FontFace
 import csv
 
-def pdf_script(name,author,roles):
+def pdf_script(name,author,roles,lang):
     
     print('\nGenerando archivo .pdf\n')
     import assets.amy
     amys = assets.amy.amy
+    lang_pack = "./assets/"+lang+"/es_MX.csv"
 
     #pip install fpdf2
 
@@ -34,7 +35,7 @@ def pdf_script(name,author,roles):
 
     for n in roles_amyd:
         char = []
-        with open('./assets/es_MX.csv', encoding="utf-8") as file, open('./assets/images.csv', encoding="utf-8") as file_png:
+        with open(lang_pack, encoding="utf-8") as file, open('./assets/images.csv', encoding="utf-8") as file_png:
             csv_reader = csv.reader(file)
             csv_image = csv.reader(file_png)
 
@@ -107,7 +108,7 @@ def pdf_script(name,author,roles):
     i = 0
     for m in teams_list:
         if m:
-            pdf.image('./assets/pdf_assets/'+ teams[i] +'.png',w=pdf.epw)
+            pdf.image('./assets/'+lang+'/pdf_assets/'+ teams[i] +'.png',w=pdf.epw)
             with pdf.table(borders_layout='NONE',line_height=4,col_widths=(3.5,8.5,54),text_align='LEFT',first_row_as_headings=False) as table:
                 for n in m:
                     row = table.row()
