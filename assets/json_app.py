@@ -5,8 +5,8 @@ from assets.pdf_app import pdf_script
 def script(name,author,logo,background,roles,pdf,lang):
 
     print('Generando archivo .json\n')
-    lang_pack = "./assets/"+lang+"/database_bug.csv"
-    lang_pack_jinx = "./assets/"+lang+"/jinxes_bug.csv"
+    lang_pack = "./assets/"+lang+"/database.csv"
+    lang_pack_jinx = "./assets/"+lang+"/jinxes.csv"
 
     credentials = {
     "id":"_meta",
