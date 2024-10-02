@@ -2,7 +2,7 @@ from fpdf import FPDF
 class FPDF(FPDF):
     def footer(self):
         self.set_y(-10)
-        self.set_font('helvetica', '', 8)
+        self.set_font('helvetica', '', 6)
         self.cell(40,10, '© Steven Medway, bloodontheclocktower.com; unofficial translation by @nolonunez', 0, 0, 'L')
 
 from fpdf.fonts import FontFace
@@ -143,7 +143,7 @@ def pdf_script(name,author,roles,lang):
     
     total = len(townsfolk) + len(outsider) + len(minion) + len(demon)
 
-    if total > 23:
+    if total > 22:
         pdf = FPDF('P','mm','Legal')
     elif total > 12 and len(fabled) > 0:
         pdf = FPDF('P','mm','Legal')
@@ -177,11 +177,11 @@ def pdf_script(name,author,roles,lang):
                     row.cell(author,style=FontFace(size_pt=8))
                 else:
                     row.cell('hecho por '+ author,style=FontFace(size_pt=8))
-            if len(fabled) > 0:
-                for data in fabled:
-                        row.cell(img=data[0],img_fill_width=True)
-                        row.cell(data[1],style=FontFace(size_pt=8))
-                        print(data[1] +' listo.')
+            #if len(fabled) > 0:
+            #    for data in fabled:
+            #            row.cell(img=data[0],img_fill_width=True)
+            #            row.cell(data[1],style=FontFace(size_pt=8))
+            #            print(data[1] +' listo.')
 
     pdf.set_font('helvetica', '', 8)
 

@@ -202,7 +202,7 @@ def script(name,author,logo,background,roles,pdf,lang):
         path = lang + "/custom/"
     else:
         path = lang + "/teensy/"
-
+        
     with open("./botc_scripts/" + path + name.replace(" ","_") + ".json", "w+") as f:
         json.dump(script, f)  
     f.close()
