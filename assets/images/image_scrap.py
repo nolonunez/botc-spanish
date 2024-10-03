@@ -35,6 +35,7 @@ def png(category):
 
 		role_id = png["alt"]
 		role_id = role_id.replace("Icon ","").replace(" ","").replace(".png","")
+		role_id = role_id.lower()
 
 		png = "https://wiki.bloodontheclocktower.com/" + png["src"]
 		
@@ -74,6 +75,7 @@ def png2(category):
 
 			role_id = png["alt"]
 			role_id = role_id.replace("Icon ","").replace(" ","").replace(".png","")
+			role_id = role_id.lower()
 
 			png = "https://wiki.bloodontheclocktower.com/" + png["src"]
 			

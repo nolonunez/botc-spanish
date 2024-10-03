@@ -126,9 +126,10 @@ amy = [
 #Once per game
 "assassin",
 #Everything else
-"baron",
 "mezepheles",
 "goblin", 
+"boffin",
+"baron",
 "scarletwoman",
 "eviltwin",
 "organgrinder",
