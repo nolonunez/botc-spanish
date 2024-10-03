@@ -4,7 +4,7 @@ heretic,spy,"El Hereje se registra como un Forastero no en juego para el Espía.
 heretic,widow,"El Hereje se registra como un Forastero no en juego para la Viuda. El Hereje sabe cuál Forastero."
 heretic,godfather,"El Hereje se registra como un Forastero no en juego para el Padrino. El Hereje sabe cuál Forastero."
 alhadikhia,mastermind,"Si el Al-Hadikhia muere por ejecución, y el Maquiavélico está vivo, el Al-Hadikhia escoge a 3 jugadores del equipo bueno esta noche: si los 3 deciden vivir, gana el equipo malo. De lo contrario, gana el equipo bueno."
-kazali,soldier,"Si el Kazali convierte al Soldado en un Minion, el Soldado escoge en cuál Minion no en juego convertirse."
+kazali,soldier,"El Kazali puede escoger que el jugador Soldado sea uno de sus Minions del equipo malo."
 organgrinder,flowergirl,"Si el Organillero está causando votos ciegos, la Niña de las Flores despierta esta noche para escoger a un jugador: aprende si ese jugador votó hoy. (En vez de su habilidad normal)"
 summoner,preacher,"Si el Pastor escogió al Invocador antes de o en la 3era noche, el Invocador escoge cuál Demonio, pero el Narrador escoge cuál jugador."
 summoner,pithag,"El Invocador no puede crear un Demonio ya en juego. Si el Invocador crea a un Demonio no en juego, las muertes esta noche son arbitrarias."
