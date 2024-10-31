@@ -24,7 +24,7 @@
 Este es un proyecto personal para que mi gente latina o de habla hispana no se quede con las ganas de jugar un script de BOTC en su idioma, ya sea en la app oficial (https://botc.app) o en persona con los PDFs. Contiene todos los personajes oficiales hasta la fecha, y continúo trabajando para que se pueda parecer cada vez más a los scripts originales en inglés.<br>
 En las carpetas vienen varios scripts que suelo jugar, los oficiales, y algunos míos los cuales cualquiera puede copiar y pegar en la app oficial, sin tener que hacer gran cosa.<br>
 <br>
-Para que se vean las imágenes, es necesario dentro de la app irse a settings, general y activar "Show Custom Images / Homebrew Icons.
+Para que se vean las imágenes, es necesario dentro de la app irse a settings, general y activar "Show Custom Images / Homebrew Icons".
 
 <p align="right">(<a href="#readme-top">inicio</a>)</p>
 
