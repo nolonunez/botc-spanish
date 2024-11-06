@@ -165,6 +165,7 @@ amy = [
 
 #TRAVELERS
 #You start knowing
+"gnome",
 #Each night
 "barista", 
 "bureaucrat", 
