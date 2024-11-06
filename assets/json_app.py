@@ -61,10 +61,10 @@ def script(name,author,logo,background,roles,pdf,lang):
             #dictionary that stores one role
             roles_dic = {}
 
-            obj_list = ["id","name","edition","team","firstNight","firstNightReminder","otherNight","otherNightReminder","reminders","remindersGlobal","ability","setup","special","jinxes"]
+            obj_list = ["id","name","edition","team","firstNight","firstNightReminder","otherNight","otherNightReminder","reminders","remindersGlobal","ability","setup","flavor","special","jinxes"]
 
             x = 0
-            while x < 14:
+            while x < 15:
                 with open(lang_pack, encoding="utf-8") as file:
                     csv_reader = csv.reader(file)
 
@@ -120,7 +120,7 @@ def script(name,author,logo,background,roles,pdf,lang):
                                     n = n + 1    
                                   
                                 #special abilities
-                                elif x == 12:
+                                elif x == 13:
 
                                     char = row[0]
                                                                                                           
@@ -133,7 +133,7 @@ def script(name,author,logo,background,roles,pdf,lang):
 
                                     fs.close()
                                 
-                                elif x == 13:
+                                elif x == 14:
                                     
                                     char = row[0]
                                     jinx_list = []
