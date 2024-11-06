@@ -70,7 +70,8 @@ def png2(category):
 		roles = soup.find_all("div", {"class": type})
 
 		for role in roles:
-			
+			# Si no funciona, borrar la siguiente linea:
+			print("Looking for the " + role["title"])			
 			png = role.find("img")
 
 			role_id = png["alt"]
