@@ -202,9 +202,9 @@ def script(name,author,logo,background,roles,pdf,lang):
         path = lang + "/custom/"
     else:
         path = lang + "/teensy/"
-        
+
     with open("./botc_scripts/" + path + name.replace(" ","_") + ".json", "w+") as f:
-        json.dump(script, f)  
+        json.dump(script, f, indent = 2)  
     f.close()
 
     print("\nSe agregaron " + str(n) + " de " + str(n2) + " roles en total.")
