@@ -133,6 +133,11 @@ def script(name,author,logo,background,roles,pdf,lang):
 
                                     fs.close()
                                 
+                                #elif x == 12:
+
+                                #    if row[x] == "":
+                                #        roles_dic[obj_name] = "Aguanten a Nolo que no ha puesto todos los flavors."
+
                                 elif x == 14:
                                     
                                     char = row[0]

@@ -139,7 +139,7 @@
     "edition": "bmr",
     "team": "outsider",
     "firstNight": 7,
-    "firstNightReminder": "Si hay 7 o m\u00e1s jugadores: Mu\u00e9strale al Lun\u00e1tico un n\u00famero de Minions arbitrarios seg\u00fan el n\u00famero de Minions en juego. Mu\u00e9strale 3 tokens de personajes del equipo bueno arbitrarios. Si el token recibido por el Lun\u00e1tico es un Demonio que se despertar\u00eda esta noche: Deja que el Lun\u00e1tico act\u00fae como dicho Demonio. Coloca sus marcadores de 'Ataque'. Despierta al Demonio. Se\u00f1ala al jugador que es el Lun\u00e1tico y mu\u00e9strale el token de personaje. Si el Lun\u00e1tico atac\u00f3 jugadores: Se\u00f1ala al Demonio cada jugador que fue atacada por el Lun\u00e1tico. Remueve los tokens de 'Ataque'.",
+    "firstNightReminder": "Si hay 7 o m\u00e1s jugadores: Mu\u00e9strale al Lun\u00e1tico un n\u00famero de Minions arbitrarios seg\u00fan el n\u00famero de Minions en juego. Mu\u00e9strale 3 tokens de personajes del equipo bueno arbitrarios. Si el token recibido por el Lun\u00e1tico es un Demonio que se despertar\u00eda esta noche. Coloca sus marcadores de 'Ataque'. Despierta al Demonio. Se\u00f1ala al jugador que es el Lun\u00e1tico y mu\u00e9strale el token de personaje. Si el Lun\u00e1tico atac\u00f3 jugadores: Se\u00f1ala al Demonio cada jugador que fue atacada por el Lun\u00e1tico.",
     "otherNight": 21,
     "otherNightReminder": "Deja que el Lun\u00e1tico haga las acciones del Demonio. Coloca sus marcadores de 'Ataque' . Si el Lun\u00e1tico atac\u00f3 jugadores: Se\u00f1ala al Demonio cada jugador que fue atacada por el Lun\u00e1tico. Remueve los tokens de 'Ataque'.",
     "reminders": [

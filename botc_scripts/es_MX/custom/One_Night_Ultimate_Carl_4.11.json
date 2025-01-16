@@ -1,28 +1,30 @@
 [
   {
     "id": "_meta",
-    "name": "One Night Ultimate Carl 4.10",
+    "name": "One Night Ultimate Carl 4.11",
     "author": "Ken Cheng",
     "background": "https://botc.app/assets/background1-C0iW8pNy.webp"
   },
   {
-    "id": "steward_es",
-    "name": "Ayudante",
+    "id": "noble_es",
+    "name": "Noble",
     "edition": "experimental",
     "team": "townsfolk",
-    "firstNight": 42,
-    "firstNightReminder": "Se\u00f1ala a un jugador del equipo bueno.",
+    "firstNight": 43,
+    "firstNightReminder": "Se\u00f1ala a 3 jugadores incluyendo a uno del equipo malo, sin importar el orden.",
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": [
-      "Instructor"
+      "Visto",
+      "Visto",
+      "Visto"
     ],
-    "ability": "Comienzas conociendo a un jugador del equipo bueno.",
+    "ability": "Comienzas sabiendo que de 3 jugadores, 1 y solo 1 de ellos es del equipo malo.",
     "setup": false,
     "flavor": "",
     "image": [
-      "https://wiki.bloodontheclocktower.com//images/f/fe/Icon_steward.png",
-      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/steward.png"
+      "https://wiki.bloodontheclocktower.com//images/c/cc/Icon_noble.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/noble.png"
     ]
   },
   {
@@ -98,23 +100,6 @@
     "image": [
       "https://wiki.bloodontheclocktower.com//images/1/11/Icon_shugenja.png",
       "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/shugenja.png"
-    ]
-  },
-  {
-    "id": "empath_es",
-    "name": "\u00c9mpata",
-    "edition": "tb",
-    "team": "townsfolk",
-    "firstNight": 36,
-    "firstNightReminder": "Mu\u00e9strale la se\u00f1al num\u00e9rica (0, 1, 2) indicando el n\u00famero de vecinos vivos del \u00c9mpata que son del equipo malo.",
-    "otherNight": 53,
-    "otherNightReminder": "Mu\u00e9strale la se\u00f1al num\u00e9rica (0, 1, 2) indicando el n\u00famero de vecinos vivos del \u00c9mpata que son del equipo malo.",
-    "ability": "Cada noche, aprendes cu\u00e1ntos de tus 2 vecinos vivos son del equipo malo.",
-    "setup": false,
-    "flavor": "Me duelen las rodillas. Algo no est\u00e1 bien aqu\u00ed. Lo puedo sentir.",
-    "image": [
-      "https://wiki.bloodontheclocktower.com//images/1/13/Icon_empath.png",
-      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/empath.png"
     ]
   },
   {
@@ -209,6 +194,26 @@
     "image": [
       "https://wiki.bloodontheclocktower.com//images/d/d3/Icon_slayer.png",
       "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/slayer.png"
+    ]
+  },
+  {
+    "id": "fisherman_es",
+    "name": "Pescador",
+    "edition": "experimental",
+    "team": "townsfolk",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": "",
+    "reminders": [
+      "Sin Habilidad"
+    ],
+    "ability": "Una vez por juego, durante el d\u00eda, visita al Narrador para un consejo que te ayude a ganar.",
+    "setup": false,
+    "flavor": "",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/1/19/Icon_fisherman.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/fisherman.png"
     ]
   },
   {
@@ -452,13 +457,13 @@
     ]
   },
   {
-    "id": "carl_es",
-    "name": "Carl",
-    "edition": "kencheng",
+    "id": "fiddler_es",
+    "name": "Violinista",
+    "edition": "experimental",
     "team": "fabled",
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "ability": "Al terminar el 1er d\u00eda, todos los jugadores se\u00f1alan a qui\u00e9n matan para finalizar el juego. Si el Demonio o un Minion muere, gana el equipo bueno. No hay chats privados.",
+    "ability": "Una vez por juego, el Demonio secretamente escoge a un jugador del equipo opuesto: todos los jugadores escogen qui\u00e9n quieren que gane de esos 2 jugadores.",
     "setup": false,
     "flavor": "",
     "special": [
@@ -466,6 +471,7 @@
         "name": "pointing",
         "type": "ability"
       }
-    ]
+    ],
+    "image": "https://wiki.bloodontheclocktower.com//images/e/e5/Icon_fiddler.png"
   }
 ]
