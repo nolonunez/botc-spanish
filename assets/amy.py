@@ -125,6 +125,7 @@ amy = [
 "psychopath",
 #Once per game
 "assassin",
+"wizard",
 #Everything else
 "mezepheles",
 "goblin", 
@@ -137,6 +138,7 @@ amy = [
 "mastermind",
 "boomdandy",
 "marionette",
+"xaan",
 
 #DEMONS
 #You start knowing

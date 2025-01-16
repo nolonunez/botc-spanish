@@ -51,6 +51,8 @@ png("https://wiki.bloodontheclocktower.com/Category:Townsfolk")
 png("https://wiki.bloodontheclocktower.com/Category:Outsiders")
 png("https://wiki.bloodontheclocktower.com/Category:Minions")
 png("https://wiki.bloodontheclocktower.com/Category:Demons")
+png("https://wiki.bloodontheclocktower.com/Category:Travellers")
+png("https://wiki.bloodontheclocktower.com/Category:Fabled")
 
 def png2(category):
 
@@ -88,5 +90,5 @@ def png2(category):
 
 	print("Images Ready")
 
-png2("https://wiki.bloodontheclocktower.com/Travellers")
-png2("https://wiki.bloodontheclocktower.com/Fabled")
+#png2("https://wiki.bloodontheclocktower.com/Travellers")
+#png2("https://wiki.bloodontheclocktower.com/Fabled")
