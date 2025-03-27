@@ -1,3 +1,5 @@
+import pandas as pd
+
 amy = [
 
 #TOWNSFOLK
@@ -213,3 +215,7 @@ amy = [
 "gardener"
 
 ]
+
+amy_df = pd.DataFrame({'id':amy})
+print(amy_df)
+amy_df.to_csv('amy_order.csv',index_label='amy')

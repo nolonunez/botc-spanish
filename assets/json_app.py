@@ -1,221 +1,224 @@
-import json
-import csv
-from assets.pdf_app import pdf_script
+import pandas as pd, numpy as np, json
+#from assets.pdf_app import pdf_script
 
 def script(name,author,logo,background,roles,pdf,lang):
 
     print('Generando archivo .json\n')
-    lang_pack = "./assets/"+lang+"/database.csv"
-    lang_pack_jinx = "./assets/"+lang+"/jinxes.csv"
+    lang_pack = './assets/lang/' + lang + '/database.csv'
+    lang_pack_jinx = './assets/lang/' + lang + '/jinxes.csv'
 
+    df = pd.read_csv(lang_pack)
+
+    # Construction of the credentials within the script: name, logo and author.
     credentials = {
-    "id":"_meta",
-    "name": name,
-    }  
+    'id':'_meta',
+    'name': name,
+    }
 
-    #list for exporting json in amy order
-    import assets.amy
-    amys = assets.amy.amy
+    if logo != '':
+        credentials['logo'] = logo
 
-    if logo != "":
-        credentials["logo"] = logo
+    if author != '':
+        credentials['author'] = author
 
-    if author != "":
-        credentials["author"] = author
+    # Inner join of only the selected roles within all the database.
+    roles_df = pd.DataFrame({'id':roles})
+    script_df = pd.merge(df,roles_df,how='inner')
+
+    # Import special abilities if necessary.
+    fs = open('./assets/special_df/special.json')
+    special_json = json.load(fs)
+
+    special_df = pd.DataFrame()
+    for i in special_json:
+        new_row = pd.DataFrame({'id':i,'special':[special_json[i]]})
+        special_df = pd.concat([special_df,new_row], ignore_index=True)
+
+    script_df = pd.merge(script_df,special_df,how='left')
+
+    # Import jinxs rules if necessary.
+    jinx_df = pd.read_csv(lang_pack_jinx)
+    jinx_sp = pd.merge(script_df,jinx_df,how='inner')[['id','jinx_id','reason']]
     
-    
-    from assets.base_scripts import tb,snv,bmr
-    
-    if background != "":
-        credentials["background"] = background
-    elif roles == tb:
-        credentials["background"] = 'https://botc.app/assets/background5-B3ODOfpI.webp'
-    elif roles == bmr:
-        credentials["background"] = 'https://botc.app/assets/background5-BcRG2zhb.webp'
-    elif roles == snv:
-        credentials["background"] = 'https://botc.app/assets/background5-CWiuwbQc.webp'
-    
+    jinx_ndf = pd.DataFrame()
+
+    for index,row in jinx_sp.iterrows():
+        rol_id = jinx_sp.at[index,'id']
+        rol_jx = jinx_sp.at[index,'jinx_id']
+        reason = jinx_sp.at[index,'reason']
+        
+        if script_df.isin([rol_jx]).any().any():
+            jinx = {}
+
+            jinx['id'] = rol_jx + '_ts'
+            jinx['reason'] = reason
+
+            new_row = pd.DataFrame({'id':rol_id,'jinxes':[jinx]})
+            jinx_ndf = pd.concat([jinx_ndf,new_row], ignore_index=True)
+
+    jinx_ndf = jinx_ndf.groupby('id')['jinxes'].apply(list).reset_index()
+    script_df = pd.merge(script_df,jinx_ndf,how='left')
+
+    # Background base.
+    bg_link = 'https://botc.app/assets/background'
+
+    if background != '':
+        credentials['background'] = background
+
+    # Change the background according to the edition.
+    elif (script_df['edition'] == 'tb').all() == True:
+        credentials['background'] = bg_link + '5-B3ODOfpI.webp'
+        credentials['name'] = 'Trouble Brewing'
+    elif (script_df['edition'] == 'bmr').all() == True:
+        credentials['background'] = bg_link + '5-BcRG2zhb.webp'
+        credentials['name'] = 'Bad Moon Rising'
+    elif (script_df['edition'] == 'snv').all() == True:
+        credentials['background'] = bg_link + '5-CWiuwbQc.webp'
+        credentials['name'] = 'Sects and Violets'
     else:
-        credentials["background"] = 'https://botc.app/assets/background1-C0iW8pNy.webp'
-
-    script = [credentials]
+        credentials['background'] = bg_link + '1-C0iW8pNy.webp'
     
-    #to count if every role was added
-    n = 0
-    n2 = len(roles)
-    town = []
-    outs = []
-    minion = []
-    demons = []
-    travels = []
-    fableds = []
-    #for characters not in travel or fabled
-    norm = []
-    #jinxes
-    ji = 0
+    # This puts them in AMY order.    
+    amy_df = pd.read_csv('./assets/special_df/amy_order.csv')
+    script_df = pd.merge(script_df,amy_df,how='inner').sort_values('amy')
+    script_df = script_df.reset_index(drop=True).iloc[:,0:-1]
 
-    for amy in amys:
+    # Add images to the roles.
+    img_df = pd.read_csv('./assets/images/images.csv')
+    img_df = img_df.rename(columns={'roles':'id'})
+    img_df = pd.merge(script_df,img_df,how='left')[['id','image','team']]
 
-        if amy in roles:
-            
-            #dictionary that stores one role
-            roles_dic = {}
+    for index,row in img_df.iterrows():
+        test = img_df.at[index,'id']
+        test_team = img_df.at[index,'team']
 
-            obj_list = ["id","name","edition","team","firstNight","firstNightReminder","otherNight","otherNightReminder","reminders","remindersGlobal","ability","setup","flavor","special","jinxes"]
+        other_team = ',https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/'
 
-            x = 0
-            while x < 15:
-                with open(lang_pack, encoding="utf-8") as file:
-                    csv_reader = csv.reader(file)
+        if test_team != 'fabled' and test_team != 'traveler':
+            img = img_df.at[index,'image'] + other_team + test + '.png'
+            img = img.split(',')
 
-                    for row in csv_reader:
-                        try:
-                            if row[0] == amy:
-                                
-                                obj_name = obj_list[x]
-                                
-                                #if not in the base three, they're experimental
-                                if x == 2 and row[x] == "":
-                                    roles_dic[obj_name] = "experimental"
-                                
-                                elif x == 3:
-                                    roles_dic[obj_name] = row[x]
-                                    if row[x] == "townsfolk":
-                                        town.append(row[0])
-                                        norm.append(row[0])
-                                    elif row[x] == "outsider":
-                                        outs.append(row[0])
-                                        norm.append(row[0])
-                                    elif row[x] == "minion":
-                                        minion.append(row[0])
-                                        norm.append(row[0])
-                                    elif row[x] == "demon":
-                                        demons.append(row[0])
-                                        norm.append(row[0])
-                                    elif row[x] == "traveler":
-                                        travels.append(row[0])
-                                    elif row[x] == "fabled":
-                                        fableds.append(row[0])
-                                
-                                #firstNight and otherNight must be int in the official app
-                                elif x == 4 or x == 6:
-                                    roles_dic[obj_name] = int(row[x])
+            img_df.at[index,'image'] = img
 
-                                #reminders must be a list within the object
-                                elif x == 8 or x == 9:
-                                    if row[x] != "":
-                                        rem = row[x].split(",")
-                                        roles_dic[obj_name] = rem
-                                    else:
-                                        continue
-                                
-                                #setup is a boolean
-                                elif x == 11:
-                                    if row[x] != "":
-                                        roles_dic["setup"] = True
-                                    else:
-                                        roles_dic["setup"] = False
+        elif test_team == 'traveler':
+            img = img_df.at[index,'image'] + other_team + test + '1.png'
+            img = img + other_team + test + '2.png'
+            img = img.split(',')
 
-                                    print(roles_dic["name"] + " listo.")
-                                    n = n + 1    
-                                  
-                                #special abilities
-                                elif x == 13:
+            img_df.at[index,'image'] = img
 
-                                    char = row[0]
-                                                                                                          
-                                    fs = open("./assets/special.json")
-                                    special_data = json.load(fs)
+    script_df = pd.merge(script_df,img_df,how='inner')
 
-                                    for i in special_data:
-                                        if i == char:
-                                            roles_dic["special"] = special_data[char]
+    # Role count.
+    count = script_df.groupby(['team']).count()['id'].reset_index()
+    count = count.rename(columns={'id':'count'})
 
-                                    fs.close()
-                                
-                                #elif x == 12:
+    teams = {'townsfolk':0,'outsider':0,'minion':0,'demon':0,'traveler':0,'fabled':0}
+    for index,row in count.iterrows():
+        teams[row['team']] = count.at[index,'count']
 
-                                #    if row[x] == "":
-                                #        roles_dic[obj_name] = "Aguanten a Nolo que no ha puesto todos los flavors."
+    base_total = teams['townsfolk'] + teams['outsider'] + teams['minion'] + teams['demon']
+    total = base_total + teams['traveler'] + teams['fabled']
 
-                                elif x == 14:
-                                    
-                                    char = row[0]
-                                    jinx_list = []
-                                    with open(lang_pack_jinx, encoding="utf-8") as fj:
-                                        jinxes = csv.reader(fj)
-                                        for row_jinx in jinxes:
-                                            try:
-                                                if row_jinx[0]== char:
-                                                    jinx_doc = {'id':'','reason':''}
+    # Corrections for .json file
+    script_df['id'] = script_df['id'].astype(str) + '_ts'
+    script_df['edition'] = script_df['edition'].fillna('exp')
+    script_df['firstNight'] = script_df['firstNight'].fillna(0)
+    #script_df['firstNight'] = script_df['firstNight'].astype(int) # Must be int for the Official App
+    script_df['otherNight'] = script_df['otherNight'].fillna(0)
+    #script_df['otherNight'] = script_df['otherNight'].astype(int) # Must be int for the Official App
+    #script_df['setup'] = script_df['setup'].fillna(False)
+    script_df = script_df.fillna('')
 
-                                                    if row_jinx[1] in roles:
-                                                        jinx_doc['id'] = row_jinx[1] + '_es'
-                                                        jinx_doc['reason'] = row_jinx[2]
-                                                    
-                                                        jinx_list.append(jinx_doc)
-                                                        ji = ji + 1
-                                            except:
-                                                continue
-                                    if jinx_list:
-                                        roles_dic['jinxes'] = jinx_list
-                                    fj.close()
+    for index,row in script_df.iterrows():
+        if script_df.at[index,'reminders'] != '':
+            rem = script_df.at[index,'reminders'].split(',')
+            script_df.at[index,'reminders'] = rem
+        if script_df.at[index,'remindersGlobal'] != '':
+            rem = script_df.at[index,'remindersGlobal'].split(',')
+            script_df.at[index,'remindersGlobal'] = rem
 
-                                else:
-                                    roles_dic[obj_name] = row[x]
-                        except:
-                            continue
-                x = x + 1
-            
-            with open('./assets/images/images.csv') as file:
-                    csv_reader2 = csv.reader(file)
-
-                    for row in csv_reader2:
-                        try:
-                            if row[1] == amy:
-                                if row[1] in fableds:
-                                    roles_dic["image"] = row[2]
-                                elif row[1] in norm:
-
-                                    img = row[2]+",https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+".png"
-                                    img = img.split(",")
-
-                                    roles_dic["image"] = img
-                                
-                                elif row[1] in travels:
-                                    
-                                    img = row[2]+",https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+"1.png"
-                                    img = img+",https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/"+row[1]+"2.png"
-                                    img = img.split(",")
-
-                                    roles_dic["image"] = img 
-                        except:
-                            continue
-
-            roles_dic["id"] = amy + '_es'
-            
-            script.append(roles_dic)
-
-    #path to folder depending on the script
-    from assets.base_scripts import tb,snv,bmr
-    path = ""
-
-    if roles == tb or roles == snv or roles == bmr:
-        path = lang + "/base_three/"
-    
-    elif len(town) + len(outs) + len(minion) + len(demons) > 12:
-        path = lang + "/custom/"
+    # Path to store the new scripts.
+    if (script_df['edition'] == 'tb').all() == True or (script_df['edition'] == 'bmr').all() == True or (script_df['edition'] == 'snv').all() == True:
+        path = lang + '/base_three/'
+    elif base_total > 12:
+        path = lang + '/custom/'
     else:
-        path = lang + "/teensy/"
+        path = lang + '/teensy/'
+
+    # DataFrame complete, now comes the .json file.
+    json_file = [credentials]
+
+    for index,row in script_df.iterrows():
+        json_role = {}
+        for i in script_df.columns:
+            if script_df.at[index,i] != '':
+                if type(script_df.at[index,i]) == np.float64:
+                    json_role[i] = int(script_df.at[index,i])
+                else:
+                    json_role[i] = script_df.at[index,i]
+        json_file.append(json_role)
 
     with open("./botc_scripts/" + path + name.replace(" ","_") + ".json", "w+") as f:
-        json.dump(script, f, indent = 2)  
+        json.dump(json_file, f, indent = 2)  
     f.close()
 
-    print("\nSe agregaron " + str(n) + " de " + str(n2) + " roles en total.")
-    print("La distribución es " + str(len(town)) + "/" + str(len(outs)) + "/" + str(len(minion)) + "/" + str(len(demons)) + ".")
-    print("Se añadieron " + str(ji) + " jinxes.")
+    print("\nSe agregaron " + str(total) + " de " + str(len(roles)) + " roles en total.")
+    print("La distribución es " + str(teams['townsfolk']) + "/" + str(teams['outsider']) + "/" + str(teams['minion']) + "/" + str(teams['demon']) + ".")
     print( name + ".json está listo.")
 
-    if pdf == "Y":
-        pdf_script(name,author,roles,lang)
+    #if pdf == "Y":
+    #    pdf_script(name,author,roles,lang)
+
+def source_json(file,name,author,logo,background,pdf,lang):
+
+    # Make the list for the roles based on the .json file.
+    source_df = pd.read_json(file)
+    if source_df.isin(['_meta']).any().any():
+        source_df = source_df.drop(index=0)
+    
+    source_df = source_df.reset_index()['id']
+    roles = []
+
+    for i in source_df:
+        roles.append(i.replace('_ts','').replace('-',''))
+
+    # Extract the author information.
+    info_og = {'name':name,'author':author,'logo':logo,'background':background}
+    info_new = {'name':'','author':'','logo':'','background':''}
+
+    f = open(file)
+    data = json.load(f)
+    
+    id_script = data[0]
+    if 'id' in id_script and id_script['id'] == '_meta':
+        for n in info_new.keys():
+            print(n)
+            if n in id_script and id_script[n] != '':
+                print('si tiene nombre')
+                info_new[n] = id_script[n]
+    f.close()
+    
+    print(info_new)
+
+    for n in info_og.keys():
+        if n != '':
+            info_new[n] = info_og[n]
+            
+    script(name,author,logo,background,roles,pdf,lang)
+
+import os, glob
+
+def update_all(lang,pdf):
+    path = './botc_scripts/' + lang
+    folders = ['/base_three', '/custom', '/teensy']
+
+    for folder in folders:
+        for file in glob.glob(os.path.join(path + folder, '*.json')):
+            
+            print('\nActualizando ' + file.replace(path+folder,'')[1:] + '.')
+            
+            source_json(file,pdf,lang,name='',author='',logo='',background='')                
+
+            print(file.replace(path+folder,'')[1:] + ' actualizado.')
+    print('\nTodos los archivos están actualizados a la versión más reciente.')

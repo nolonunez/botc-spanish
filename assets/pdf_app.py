@@ -11,8 +11,8 @@ import csv
 def pdf_script(name,author,roles,lang):
     
     print('\nGenerando archivo .pdf\n')
-    import assets.amy
-    amys = assets.amy.amy
+    import assets.special_df.amy_order
+    amys = assets.special_df.amy_order.amy
     lang_pack = "./assets/"+lang+"/database.csv"
 
     #pip install fpdf2

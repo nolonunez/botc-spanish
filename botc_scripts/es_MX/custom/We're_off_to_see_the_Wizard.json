@@ -1,0 +1,413 @@
+[
+  {
+    "id": "_meta",
+    "name": "We're off to see the Wizard",
+    "author": "Amy",
+    "background": "https://botc.app/assets/background1-C0iW8pNy.webp"
+  },
+  {
+    "id": "steward_ts",
+    "name": "Ayudante",
+    "edition": "exp",
+    "team": "townsfolk",
+    "firstNight": 53,
+    "firstNightReminder": "Se\u00f1ala a un jugador del equipo bueno.",
+    "otherNight": 0,
+    "reminders": [
+      "Instructor"
+    ],
+    "ability": "Comienzas conociendo a un jugador del equipo bueno.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/f/fe/Icon_steward.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/steward.png"
+    ]
+  },
+  {
+    "id": "shugenja_ts",
+    "name": "Shugenja",
+    "edition": "exp",
+    "team": "townsfolk",
+    "firstNight": 56,
+    "firstNightReminder": "Despierta al Shugenja, si el jugador del equipo malo m\u00e1s cerca del Shugenja est\u00e1 en direcci\u00f3n horaria, apunta en esa direcci\u00f3n, de lo contrario apunta a la otra direcci\u00f3n. Si dos jugadores del equipo malo est\u00e1n a la misma distancia, apunta a la direcci\u00f3n que sea.",
+    "otherNight": 0,
+    "ability": "Comienzas sabiendo si el jugador del equipo malo m\u00e1s cerca de ti est\u00e1 en direcci\u00f3n horaria o anti-horaria. Si es equidistante, la info es arbitraria.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/1/11/Icon_shugenja.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/shugenja.png"
+    ]
+  },
+  {
+    "id": "pixie_ts",
+    "name": "Hada",
+    "edition": "exp",
+    "team": "townsfolk",
+    "firstNight": 39,
+    "firstNightReminder": "Mu\u00e9strale a el Hada el token de un Aldeano que est\u00e9 en juego.",
+    "otherNight": 0,
+    "reminders": [
+      "Loca",
+      "Tiene Su Habilidad"
+    ],
+    "ability": "Comienzas sabiendo uno de los Aldeanos en juego. Si est\u00e1s 'loca' de que eres este personaje, ganas su habilidad cuando muera.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/d/d5/Icon_pixie.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/pixie.png"
+    ]
+  },
+  {
+    "id": "empath_ts",
+    "name": "\u00c9mpata",
+    "edition": "tb",
+    "team": "townsfolk",
+    "firstNight": 46,
+    "firstNightReminder": "Mu\u00e9strale la se\u00f1al num\u00e9rica (0, 1, 2) indicando el n\u00famero de vecinos vivos del \u00c9mpata que son del equipo malo.",
+    "otherNight": 60,
+    "otherNightReminder": "Mu\u00e9strale la se\u00f1al num\u00e9rica (0, 1, 2) indicando el n\u00famero de vecinos vivos del \u00c9mpata que son del equipo malo.",
+    "ability": "Cada noche, aprendes cu\u00e1ntos de tus 2 vecinos vivos son del equipo malo.",
+    "flavor": "Me duelen las rodillas. Algo no est\u00e1 bien aqu\u00ed. Lo puedo sentir.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/1/13/Icon_empath.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/empath.png"
+    ]
+  },
+  {
+    "id": "highpriestess_ts",
+    "name": "Gran Sacerdotisa",
+    "edition": "exp",
+    "team": "townsfolk",
+    "firstNight": 62,
+    "firstNightReminder": "Se\u00f1ala al jugador con el que pienses que deber\u00eda de hablar m\u00e1s la Gran Sacerdotisa.",
+    "otherNight": 75,
+    "otherNightReminder": "Se\u00f1ala al jugador con el que pienses que deber\u00eda de hablar m\u00e1s la Gran Sacerdotisa.",
+    "reminders": [
+      "Aliado"
+    ],
+    "ability": "Cada noche, aprende con qu\u00e9 jugador el Narrador piensa que deber\u00edas de hablarle m\u00e1s.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/6/63/Icon_highpriestess.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/highpriestess.png"
+    ]
+  },
+  {
+    "id": "balloonist_ts",
+    "name": "Aeronauta",
+    "edition": "exp",
+    "team": "townsfolk",
+    "firstNight": 44,
+    "firstNightReminder": "Elige una categor\u00eda de personajes. Se\u00f1ala a un jugador que tenga un personaje de esa cateogr\u00eda. Coloca el recordatorio de Visto del Aeronauta junto a ese personaje.",
+    "otherNight": 63,
+    "otherNightReminder": "Elige una categor\u00eda de personajes que a\u00fan no tenga el recordatorio de Visto del Aeroanuta junto a un personaje. Se\u00f1ala a un jugador cuyo personaje est\u00e1 en esa categor\u00eda. Coloca el recordatorio de Visto del Aeronauta junto a ese personaje.",
+    "reminders": [
+      "Conocido"
+    ],
+    "ability": "Cada noche, aprendes un jugador de una categor\u00eda diferente al de anoche. [+0 o +1 Forastero]",
+    "setup": true,
+    "flavor": "\u00a1M\u00e1s calor! \u00a1M\u00e1s alto! Pi\u00f9 alto! Ahh... es muy bello desde aqu\u00ed arriba, \u00bfno lo cree? \u00bfPuede ver a los ni\u00f1os pescando por el r\u00edo? \u00bfEl brillo del sol en los postes de las carpas del circo? \u00bfQu\u00e9 es esto? Un hombre viejo, solo, desmayado en la vereda? \u00a1Menos calor! \u00a1M\u00e1s abajo! Vai pi\u00f9 in basso!",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/c/cb/Icon_balloonist.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/balloonist.png"
+    ]
+  },
+  {
+    "id": "fortuneteller_ts",
+    "name": "Vidente",
+    "edition": "tb",
+    "team": "townsfolk",
+    "firstNight": 47,
+    "firstNightReminder": "La Vidente se\u00f1ala a dos jugadores. Da la se\u00f1al con la cabeza (s\u00ed o no) si alguno de esos jugadores es el Demonio.",
+    "otherNight": 61,
+    "otherNightReminder": "La Vidente se\u00f1ala a dos jugadores. Da la se\u00f1al con la cabeza (s\u00ed o no) si alguno de esos jugadores es el Demonio.",
+    "reminders": [
+      "Falso Demonio"
+    ],
+    "ability": "Cada noche, escoge a 2 jugadores: aprendes si alguno de ellos es el Demonio. Hay un jugador del equipo bueno que se registra como Demonio para ti.",
+    "flavor": "\u00a1Puedo sentir maldad en tu alma! Pero... puede que solo sea tu perfume. Soy al\u00e9rgica al Sauco",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/9/97/Icon_fortuneteller.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/fortuneteller.png"
+    ]
+  },
+  {
+    "id": "savant_ts",
+    "name": "Prodigio",
+    "edition": "snv",
+    "team": "townsfolk",
+    "firstNight": 0,
+    "otherNight": 0,
+    "ability": "Cada d\u00eda, puedes visitar al Narrador para aprender 2 cosas en privado: una es verdadera y la otra falsa.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/d/d5/Icon_savant.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/savant.png"
+    ]
+  },
+  {
+    "id": "amnesiac_ts",
+    "name": "Amn\u00e9sico",
+    "edition": "exp",
+    "team": "townsfolk",
+    "firstNight": 12,
+    "firstNightReminder": "Decide la habilidad del Amn\u00e9sico. Si la habilidad requiere que se despierte esta noche: despi\u00e9rtale para que la use.",
+    "otherNight": 5,
+    "otherNightReminder": "Si la habilidad del Amn\u00e9sico requiere que se despierte esta noche: despi\u00e9rtale para que la use.",
+    "reminders": [
+      "?"
+    ],
+    "ability": "No sabes cu\u00e1l es tu habilidad. Cada d\u00eda, intenta adivinarla en privado: sabr\u00e1s qu\u00e9 tan cerca est\u00e1s de adivinarla.",
+    "flavor": "Espera. \u00bfQu\u00e9? \u00bfQui\u00e9n? Oh, ok. Espera. \u00bfQu\u00e9?",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/2/26/Icon_amnesiac.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/amnesiac.png"
+    ]
+  },
+  {
+    "id": "artist_ts",
+    "name": "Artista",
+    "edition": "snv",
+    "team": "townsfolk",
+    "firstNight": 0,
+    "otherNight": 0,
+    "reminders": [
+      "Sin Habilidad"
+    ],
+    "ability": "Una vez por juego, durante el d\u00eda, hazle una pregunta de s\u00ed o no al Narrador en privado.",
+    "flavor": "Mon Dieu! C'est lumineux! Mi trabajo, ella es... \u00bfc\u00f3mo se dice...? Magnifique! Dieu est r\u00e9v\u00e9l\u00e9! Oui.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/1/1a/Icon_artist.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/artist.png"
+    ]
+  },
+  {
+    "id": "farmer_ts",
+    "name": "Granjero",
+    "edition": "exp",
+    "team": "townsfolk",
+    "firstNight": 0,
+    "otherNight": 56,
+    "otherNightReminder": "Si un Granjero muri\u00f3 hoy, escoge a un jugador del equipo bueno vivo y convi\u00e9rtelo en Granjero. Despierta a este jugador, mu\u00e9strale la carta de 'Eres' y el token del Granjero.",
+    "ability": "Cuando mueres en la noche, un jugador vivo del equipo bueno se convierte en un Granjero.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/f/fe/Icon_farmer.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/farmer.png"
+    ]
+  },
+  {
+    "id": "cannibal_ts",
+    "name": "Can\u00edbal",
+    "edition": "exp",
+    "team": "townsfolk",
+    "firstNight": 0,
+    "otherNight": 0,
+    "reminders": [
+      "Envenenado",
+      "Muri\u00f3 Hoy"
+    ],
+    "ability": "Tienes la habilidad del que m\u00e1s recientemente muri\u00f3 por ejecuci\u00f3n. Si dicha persona es del equipo malo, est\u00e1s envenenado hasta que alguien del equipo bueno muera por ejecuci\u00f3n.",
+    "flavor": "No me gustan los payasos. Saben chistoso.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/8/8e/Icon_cannibal.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/cannibal.png"
+    ]
+  },
+  {
+    "id": "mayor_ts",
+    "name": "Alcalde",
+    "edition": "tb",
+    "team": "townsfolk",
+    "firstNight": 0,
+    "otherNight": 0,
+    "ability": "Si solamente 3 jugadores viven y no sucede ninguna ejecuci\u00f3n, tu equipo gana. Si mueres en la noche, alg\u00fan otro jugador puede morir en tu lugar.",
+    "flavor": "Debemos de poner nuestras diferencias a un lado y dejar estas matanzas sin sentido. Todos aqu\u00ed pagamos impuestos despu\u00e9s de todo. Bueno, la mayor\u00eda.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/a/a1/Icon_mayor.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/mayor.png"
+    ]
+  },
+  {
+    "id": "puzzlemaster_ts",
+    "name": "Maestro del Acertijo",
+    "edition": "exp",
+    "team": "outsider",
+    "firstNight": 0,
+    "otherNight": 0,
+    "reminders": [
+      "Borracho",
+      "Chance Usado"
+    ],
+    "ability": "Un jugador est\u00e1 borracho, a\u00fan si mueres. Si adivinas qui\u00e9n es (una vez), aprendes qui\u00e9n es el Demonio, pero si adivinas mal recibes informaci\u00f3n incorrecta.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/7/7a/Icon_puzzlemaster.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/puzzlemaster.png"
+    ]
+  },
+  {
+    "id": "recluse_ts",
+    "name": "Reclusa",
+    "edition": "tb",
+    "team": "outsider",
+    "firstNight": 0,
+    "otherNight": 0,
+    "ability": "Puede que te registres con el equipo malo y como Minion o Demonio, a\u00fan muerto.",
+    "flavor": "Garn git ya darn grub ya mitts ofma lorn yasee. Grr. Natsy pikkins yonder southwise ye begittin afta ya! Git! Me harvy no so widda licks and demmons no be fightin' hadsup ne'er ma kin. Git, assay!",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/6/60/Icon_recluse.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/recluse.png"
+    ]
+  },
+  {
+    "id": "mutant_ts",
+    "name": "Mutante",
+    "edition": "snv",
+    "team": "outsider",
+    "firstNight": 0,
+    "otherNight": 0,
+    "ability": "Si est\u00e1s 'loco' de que eres un Forastero, puede que seas ejecutado.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/2/2e/Icon_mutant.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/mutant.png"
+    ]
+  },
+  {
+    "id": "politician_ts",
+    "name": "Pol\u00edtico",
+    "edition": "exp",
+    "team": "outsider",
+    "firstNight": 0,
+    "otherNight": 0,
+    "ability": "Si fuiste el jugador m\u00e1s responsable de la p\u00e9rdida de tu equipo, cambias de equipo y ganas, a\u00fan muerto.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/a/a3/Icon_politician.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/politician.png"
+    ]
+  },
+  {
+    "id": "poisoner_ts",
+    "name": "Envenenador",
+    "edition": "tb",
+    "team": "minion",
+    "firstNight": 25,
+    "firstNightReminder": "El Envenenador se\u00f1ala a un jugador. Ese jugador est\u00e1 envenenado.",
+    "otherNight": 7,
+    "otherNightReminder": "El jugador previamente envenenado ya no est\u00e1 envenenado. El Envenenador se\u00f1ala a un jugador. Ese jugador est\u00e1 envenenado.",
+    "reminders": [
+      "Envenenado"
+    ],
+    "ability": "Cada noche, escoge a un jugador: est\u00e1 envenenado esta noche y el d\u00eda de ma\u00f1ana.",
+    "flavor": "Agregue compuesto Alfa al compuesto Beta... \u00a1NO TANTO!",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/b/b1/Icon_poisoner.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/poisoner.png"
+    ]
+  },
+  {
+    "id": "cerenovus_ts",
+    "name": "Cerenovus",
+    "edition": "snv",
+    "team": "minion",
+    "firstNight": 34,
+    "firstNightReminder": "El Cerenovus se\u00f1ala a un jugador, luego a un personaje en su hoja de personajes. Despierta a ese jugador. Mu\u00e9strale la carta de 'Este personaje te seleccion\u00f3', luego el token de Cerenovus. Mu\u00e9strale el token de personaje. Si el jugador no est\u00e1 loco diciendo que es dicho personaje ma\u00f1ana, puede ser ejecutado.",
+    "otherNight": 17,
+    "otherNightReminder": "El Cerenovus se\u00f1ala a un jugador, luego a un personaje en su hoja de personajes. Despierta a ese jugador. Mu\u00e9strale la carta de 'Este personaje te seleccion\u00f3', luego el token de Cerenovus. Mu\u00e9strale el token de personaje. Si el jugador no est\u00e1 loco diciendo que es dicho personaje ma\u00f1ana, puede ser ejecutado.",
+    "reminders": [
+      "Loco"
+    ],
+    "ability": "Cada noche, escoge a un jugador y a un personaje del equipo bueno: ma\u00f1ana estar\u00e1 'loco' de que es dicho personaje, o puede que sea ejecutado.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/4/45/Icon_cerenovus.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/cerenovus.png"
+    ]
+  },
+  {
+    "id": "wizard_ts",
+    "name": "Mago",
+    "edition": "exp",
+    "team": "minion",
+    "firstNight": 0,
+    "otherNight": 0,
+    "ability": "Una vez por juego, escoge pedir un deseo. Si es concedido, puede que tenga un precio y deje una pista de su naturaleza.",
+    "flavor": "Cada hombre y cada mujer es una estrella. El amor es la ley, el amor debajo del querer.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/b/b5/Icon_wizard.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/wizard.png"
+    ]
+  },
+  {
+    "id": "scarletwoman_ts",
+    "name": "Mujer Escarlata",
+    "edition": "tb",
+    "team": "minion",
+    "firstNight": 0,
+    "otherNight": 22,
+    "otherNightReminder": "Si la Mujer Escarlata se convirti\u00f3 en el Demonio hoy: Mu\u00e9strale la carta de 'Eres', y luego el token de Demonio.",
+    "reminders": [
+      "Demonio"
+    ],
+    "ability": "Si hay 5 o m\u00e1s jugadores vivos y el Demonio muere, te conviertes en el Demonio. (Viajeros no cuentan)",
+    "flavor": "Me has mostrado los secretos del Consulado de la Flama Morada. Hemos estado juntos en fuego, la lujuria y en la comuni\u00f3n bestial, soy tu eterna sirvienta. Pero esta noche, querido. Yo ser\u00e9 tu maestra.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/1/13/Icon_scarletwoman.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/scarletwoman.png"
+    ]
+  },
+  {
+    "id": "imp_ts",
+    "name": "Imp",
+    "edition": "tb",
+    "team": "demon",
+    "firstNight": 0,
+    "otherNight": 28,
+    "otherNightReminder": "El Imp se\u00f1ala a un jugador. Ese jugador muere. Si el Imp se mata a s\u00ed mismo de esta manera: Reemplaza el token de personaje de un Minion vivo con un token extra de Imp. Mu\u00e9strale la tarjeta de 'Eres' al antig\u00fco Minion, y luego el token de Imp.",
+    "reminders": [
+      "Muerto"
+    ],
+    "ability": "Cada noche*, escoge a un jugador: se muere. Si t\u00fa mueres de esta manera, un Minion se convierte en el Imp.",
+    "flavor": "Tenemos que mantener nuestro ingenio al filo, y nuestras espadas a\u00fan m\u00e1s filosas. Gente malvada camina entre nosotros, y no van a detenerse por nada hasta destruirnos a nosotros, los ciudadanos buenos e indefensos, y luego dejar nuestro pueblo en ruinas. No conf\u00eden en nadie. Pero, si necesitan confiar en alguien, que sea en mi.",
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/5/5c/Icon_imp.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/imp.png"
+    ]
+  },
+  {
+    "id": "lordoftyphon_ts",
+    "name": "Lord del Tif\u00f3n",
+    "edition": "exp",
+    "team": "demon",
+    "firstNight": 4,
+    "firstNightReminder": "Reemplaza a los vecinos del Lord del Tif\u00f3n con Minions, despi\u00e9rtales, diles que ahora pertenecen a su nuevo equipo y qu\u00e9 personajes son. Procede a dar la Informaci\u00f3n de Minions.",
+    "otherNight": 36,
+    "otherNightReminder": "El Lord del Tif\u00f3n se\u00f1ala a un jugador. Este jugador muere.",
+    "reminders": [
+      "Muerto"
+    ],
+    "ability": "Cada noche*, escoge a un jugador: se muere. [Personajes del equipo malo est\u00e1n sentados juntos. T\u00fa est\u00e1s en medio. +1 Minion, -? a +? Forasteros]",
+    "setup": true,
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/c/cf/Icon_lordoftyphon.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/lordoftyphon.png"
+    ]
+  },
+  {
+    "id": "fanggu_ts",
+    "name": "Fang Gu",
+    "edition": "snv",
+    "team": "demon",
+    "firstNight": 0,
+    "otherNight": 33,
+    "otherNightReminder": "El Fang Gu se\u00f1ala a un jugador. Ese jugador muere. O, si ese jugador era un Forastero y no hay otro Fang Gu en juego: El Fang Gu se muere en lugar del jugador seleccionado. El jugador seleccionado ahora es un Fang Gu del equipo malo. Despierta al nuevo Fang Gu. Mu\u00e9strale la carta de 'Eres', y luego el token de Fang Gu. Mu\u00e9strale otra vez la carta de 'Eres' y hazle la se\u00f1al del equipo malo, pulgar hacia abajo.",
+    "reminders": [
+      "Muerto",
+      "Sin Salto"
+    ],
+    "ability": "Cada noche*, escoge a un jugador: se muere. El primer Forastero que se muera as\u00ed se convierte en un Fang Gu del equipo malo y t\u00fa mueres en su lugar. [+1 Forastero]",
+    "setup": true,
+    "jinxes": [
+      {
+        "id": "scarletwoman_ts",
+        "reason": "Si el Fang Gu escoge a un Forastero y muere, la Mujer Escarlata no se convierte en el Fang Gu."
+      }
+    ],
+    "image": [
+      "https://wiki.bloodontheclocktower.com//images/0/0e/Icon_fanggu.png",
+      "https://raw.githubusercontent.com/nolonunez/botc-spanish/main/assets/images/pngs/otherteam/fanggu.png"
+    ]
+  }
+]

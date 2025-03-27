@@ -1,4 +1,4 @@
-role_id,jinx_id,reason
+id,jinx_id,reason
 lilmonsta,magician,"Cada noche, el Ilusionista escoge a un Minion: si el Minion está en juego, ese Minion cuida al Pequeño Demonio."
 heretic,spy,"El Hereje se registra como un Forastero no en juego para el Espía. El Hereje sabe cuál Forastero."
 heretic,widow,"El Hereje se registra como un Forastero no en juego para la Viuda. El Hereje sabe cuál Forastero."
