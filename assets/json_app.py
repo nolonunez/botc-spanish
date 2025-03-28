@@ -3,7 +3,7 @@ import pandas as pd, numpy as np, json
 
 def script(name,author,logo,background,roles,pdf,lang):
 
-    print('Generando archivo .json\n')
+    print('\nGenerando archivo '+ name +'.json\n')
     lang_pack = './assets/lang/' + lang + '/database.csv'
     lang_pack_jinx = './assets/lang/' + lang + '/jinxes.csv'
 
@@ -55,9 +55,10 @@ def script(name,author,logo,background,roles,pdf,lang):
 
             new_row = pd.DataFrame({'id':rol_id,'jinxes':[jinx]})
             jinx_ndf = pd.concat([jinx_ndf,new_row], ignore_index=True)
-
-    jinx_ndf = jinx_ndf.groupby('id')['jinxes'].apply(list).reset_index()
-    script_df = pd.merge(script_df,jinx_ndf,how='left')
+    
+    if jinx_ndf.empty == False:
+        jinx_ndf = jinx_ndf.groupby('id')['jinxes'].apply(list).reset_index()
+        script_df = pd.merge(script_df,jinx_ndf,how='left')
 
     # Background base.
     bg_link = 'https://botc.app/assets/background'
@@ -163,7 +164,7 @@ def script(name,author,logo,background,roles,pdf,lang):
         json.dump(json_file, f, indent = 2)  
     f.close()
 
-    print("\nSe agregaron " + str(total) + " de " + str(len(roles)) + " roles en total.")
+    print("Se agregaron " + str(total) + " de " + str(len(roles)) + " roles en total.")
     print("La distribución es " + str(teams['townsfolk']) + "/" + str(teams['outsider']) + "/" + str(teams['minion']) + "/" + str(teams['demon']) + ".")
     print( name + ".json está listo.")
 
@@ -181,7 +182,7 @@ def source_json(file,name,author,logo,background,pdf,lang):
     roles = []
 
     for i in source_df:
-        roles.append(i.replace('_ts','').replace('-',''))
+        roles.append(i.replace('_ts','').replace('-','').replace('_es',''))
 
     # Extract the author information.
     info_og = {'name':name,'author':author,'logo':logo,'background':background}
@@ -193,19 +194,15 @@ def source_json(file,name,author,logo,background,pdf,lang):
     id_script = data[0]
     if 'id' in id_script and id_script['id'] == '_meta':
         for n in info_new.keys():
-            print(n)
             if n in id_script and id_script[n] != '':
-                print('si tiene nombre')
                 info_new[n] = id_script[n]
     f.close()
-    
-    print(info_new)
 
     for n in info_og.keys():
-        if n != '':
+        if info_og[n] != '':
             info_new[n] = info_og[n]
             
-    script(name,author,logo,background,roles,pdf,lang)
+    script(info_new['name'],info_new['author'],info_new['logo'],info_new['background'],roles,pdf,lang)
 
 import os, glob
 
@@ -215,10 +212,10 @@ def update_all(lang,pdf):
 
     for folder in folders:
         for file in glob.glob(os.path.join(path + folder, '*.json')):
-            
-            print('\nActualizando ' + file.replace(path+folder,'')[1:] + '.')
-            
-            source_json(file,pdf,lang,name='',author='',logo='',background='')                
+            name=''
+            author=''
+            logo=''
+            background=''
 
-            print(file.replace(path+folder,'')[1:] + ' actualizado.')
+            source_json(file,name,author,logo,background,pdf,lang)                
     print('\nTodos los archivos están actualizados a la versión más reciente.')

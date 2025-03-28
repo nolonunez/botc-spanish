@@ -1,4 +1,4 @@
-from assets.json_app import script
+from assets.json_app import script, source_json
 
 lang = "es_MX"
 
@@ -13,4 +13,8 @@ pdf = 'N'
 roles = [
 ]
 
-script(name,author,logo,background,roles,pdf,lang)
+file = './source.json'
+
+# Use 'source_json' if you want to translate the source.json, otherwise use 'script'.
+#script(name,author,logo,background,roles,pdf,lang)
+source_json(file,name,author,logo,background,pdf,lang)
