@@ -1,9 +1,9 @@
 id,name,edition,team,firstNight,firstNightReminder,otherNight,otherNightReminder,reminders,remindersGlobal,ability,setup,flavor
 nightinfo,"*No la Primera Noche",Primera Noche,Otras Noches,,,,,,,,,
-duskinfo,Anochecer,none,none,,"Comienza la Fase de Noche.",,"Comienza la Fase de Noche.",,,,,
-minioninfo,Info Minion,none,none,,"idk",,,,,,,
-demoninfo,Info Demonio,none,none,,"idk",,,,,,,
-dawninfo,Amanecer,none,none,,"Espera unos segundos. Comienza la Fase de Día.",,"Espera unos segundos. Comienza la Fase de Día.",,,,,
+duskinfo,Anochecer,none,none,0,"Comienza la Fase de Noche.",0,"Comienza la Fase de Noche.",,,,,
+minioninfo,Info Minion,none,none,15,"idk",,,,,,,
+demoninfo,Info Demonio,none,none,18,"idk",,,,,,,
+dawninfo,Amanecer,none,none,98,"Espera unos segundos. Comienza la Fase de Día.",98,"Espera unos segundos. Comienza la Fase de Día.",,,,,
 alchemist,Alquimista,,townsfolk,5,Muestra al Alquimista el token de un Minion no presente en el juego.,0,,,Es el Alquimista,Tienes la habilidad de un Minion no presente en la partida.,,"Visita el interior de la Tierra. Por la rectificación encontrarás la piedra escondida. Por encima del oro, yace el rojo. Kéter en Maljut."
 amnesiac,Amnésico,,townsfolk,12,Decide la habilidad del Amnésico. Si la habilidad requiere que se despierte esta noche: despiértale para que la use.,5,Si la habilidad del Amnésico requiere que se despierte esta noche: despiértale para que la use.,?,,"No sabes cuál es tu habilidad. Cada día, intenta adivinarla en privado: sabrás qué tan cerca estás de adivinarla.",,"Espera. ¿Qué? ¿Quién? Oh, ok. Espera. ¿Qué?"
 artist,Artista,snv,townsfolk,0,,0,,Sin Habilidad,,"Una vez por juego, durante el día, hazle una pregunta de sí o no al Narrador en privado.",,"Mon Dieu! C'est lumineux! Mi trabajo, ella es... ¿cómo se dice...? Magnifique! Dieu est révélé! Oui."

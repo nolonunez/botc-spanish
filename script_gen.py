@@ -16,5 +16,5 @@ roles = [
 file = './source.json'
 
 # Use 'source_json' if you want to translate the source.json, otherwise use 'script'.
-#script(name,author,logo,background,roles,pdf,lang)
-source_json(file,name,author,logo,background,pdf,lang)
+script(name,author,logo,background,roles,pdf,lang)
+#source_json(file,name,author,logo,background,pdf,lang)

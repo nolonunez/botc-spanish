@@ -1,5 +1,5 @@
 import pandas as pd, numpy as np, json
-#from assets.pdf_app import pdf_script
+from assets.pdf_app import pdf_script
 
 def script(name,author,logo,background,roles,pdf,lang):
 
@@ -59,25 +59,6 @@ def script(name,author,logo,background,roles,pdf,lang):
     if jinx_ndf.empty == False:
         jinx_ndf = jinx_ndf.groupby('id')['jinxes'].apply(list).reset_index()
         script_df = pd.merge(script_df,jinx_ndf,how='left')
-
-    # Background base.
-    bg_link = 'https://botc.app/assets/background'
-
-    if background != '':
-        credentials['background'] = background
-
-    # Change the background according to the edition.
-    elif (script_df['edition'] == 'tb').all() == True:
-        credentials['background'] = bg_link + '5-B3ODOfpI.webp'
-        credentials['name'] = 'Trouble Brewing'
-    elif (script_df['edition'] == 'bmr').all() == True:
-        credentials['background'] = bg_link + '5-BcRG2zhb.webp'
-        credentials['name'] = 'Bad Moon Rising'
-    elif (script_df['edition'] == 'snv').all() == True:
-        credentials['background'] = bg_link + '5-CWiuwbQc.webp'
-        credentials['name'] = 'Sects and Violets'
-    else:
-        credentials['background'] = bg_link + '1-C0iW8pNy.webp'
     
     # This puts them in AMY order.    
     amy_df = pd.read_csv('./assets/special_df/amy_order.csv')
@@ -121,14 +102,30 @@ def script(name,author,logo,background,roles,pdf,lang):
     base_total = teams['townsfolk'] + teams['outsider'] + teams['minion'] + teams['demon']
     total = base_total + teams['traveler'] + teams['fabled']
 
+    # Background base.
+    bg_link = 'https://botc.app/assets/background'
+
+    if background != '':
+        credentials['background'] = background
+
+    # Change the background according to the edition.
+    elif ((script_df['edition'] == 'tb').all() == True) and total == 26:
+        credentials['background'] = bg_link + '5-B3ODOfpI.webp'
+        credentials['name'] = 'Trouble Brewing'
+    elif ((script_df['edition'] == 'bmr').all() == True) and total == 30:
+        credentials['background'] = bg_link + '5-BcRG2zhb.webp'
+        credentials['name'] = 'Bad Moon Rising'
+    elif ((script_df['edition'] == 'snv').all() == True) and total == 30:
+        credentials['background'] = bg_link + '5-CWiuwbQc.webp'
+        credentials['name'] = 'Sects and Violets'
+    else:
+        credentials['background'] = bg_link + '1-C0iW8pNy.webp'
+
     # Corrections for .json file
     script_df['id'] = script_df['id'].astype(str) + '_ts'
     script_df['edition'] = script_df['edition'].fillna('exp')
     script_df['firstNight'] = script_df['firstNight'].fillna(0)
-    #script_df['firstNight'] = script_df['firstNight'].astype(int) # Must be int for the Official App
     script_df['otherNight'] = script_df['otherNight'].fillna(0)
-    #script_df['otherNight'] = script_df['otherNight'].astype(int) # Must be int for the Official App
-    #script_df['setup'] = script_df['setup'].fillna(False)
     script_df = script_df.fillna('')
 
     for index,row in script_df.iterrows():
@@ -168,8 +165,8 @@ def script(name,author,logo,background,roles,pdf,lang):
     print("La distribución es " + str(teams['townsfolk']) + "/" + str(teams['outsider']) + "/" + str(teams['minion']) + "/" + str(teams['demon']) + ".")
     print( name + ".json está listo.")
 
-    #if pdf == "Y":
-    #    pdf_script(name,author,roles,lang)
+    if pdf == "Y":
+        pdf_script(name,author,script_df,lang,base_total)
 
 def source_json(file,name,author,logo,background,pdf,lang):
 
